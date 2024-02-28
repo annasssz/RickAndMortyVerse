@@ -8,7 +8,7 @@
 import Foundation
 
 extension CharacterItem {
-  struct Location: Codable {
+  struct Location: Decodable {
     let name: String
     let url: String
   }

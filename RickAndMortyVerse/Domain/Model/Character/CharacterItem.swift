@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterItem: Codable {
+struct CharacterItem: Decodable {
   let id: Int
   let name: String
   let status: String

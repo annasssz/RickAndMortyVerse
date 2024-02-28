@@ -11,7 +11,6 @@ class CharacterListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    view.backgroundColor = .red
     
     Task(priority: .userInitiated) { [weak self] in
       guard let self else {
