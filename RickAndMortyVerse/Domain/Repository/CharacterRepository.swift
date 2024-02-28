@@ -11,7 +11,7 @@ import Foundation
 struct Void: Decodable {}
 
 class CharacterRepository {
-  func getCharacters(page: Int? = nil) async throws -> Void {
+  func getCharacters(page: Int? = nil) async throws -> CharacterResult {
     let endpoint = Endpoint(path: "character")
     return try await NetworkService.shared.request(endpoint: endpoint)
   }
