@@ -8,7 +8,7 @@
 import Foundation
 
 class CharacterRepository {
-  func getCharacters(page: Int? = nil) async throws -> CharacterResult {
+  func getCharacters(page: Int? = nil) async throws -> CharacterResponse {
     let endpoint = Endpoint(path: "character")
     return try await NetworkService.shared.request(endpoint: endpoint)
   }
