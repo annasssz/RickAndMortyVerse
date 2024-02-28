@@ -16,12 +16,12 @@ struct Endpoint {
   
   init(
     path: String,
-    method: HTTPMethod,
+    method: HTTPMethod = .get,
     queryItems: [URLQueryItem]? = nil,
     headers: [String : String]? = nil, 
     body: Data? = nil
   ) {
-    self.path = path
+    self.path = "/\(path)"
     self.method = method
     self.queryItems = queryItems
     self.headers = headers

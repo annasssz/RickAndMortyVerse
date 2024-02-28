@@ -12,7 +12,7 @@ struct Void: Decodable {}
 
 class CharacterRepository {
   func getCharacters(page: Int? = nil) async throws -> Void {
-    let endpoint = Endpoint(path: "/character", method: .get)
+    let endpoint = Endpoint(path: "character")
     return try await NetworkService.shared.request(endpoint: endpoint)
   }
 }
