@@ -7,9 +7,6 @@
 
 import Foundation
 
-//TODO: REMOVE
-struct Void: Decodable {}
-
 class CharacterRepository {
   func getCharacters(page: Int? = nil) async throws -> CharacterResult {
     let endpoint = Endpoint(path: "character")
