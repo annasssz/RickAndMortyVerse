@@ -46,13 +46,13 @@ class CharacterListViewController: UIViewController {
       count: 2
     )
     
-    group.interItemSpacing = .fixed(16.0)
+    group.interItemSpacing = .fixed(16)
     
     // Create Section
     let section = NSCollectionLayoutSection(group: group)
     
-    section.interGroupSpacing = 16.0
-    section.contentInsets = .init(top: 16.0, leading: 16.0, bottom: 16.0, trailing: 16.0)
+    section.interGroupSpacing = 16
+    section.contentInsets = .init(top: 12, leading: 12, bottom: 12, trailing: 12)
     
     // Return
     return UICollectionViewCompositionalLayout(section: section)
@@ -69,7 +69,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
       return UICollectionViewCell(frame: .zero)
     }
     
-    cell.configure(cheracter: viewModel.data[indexPath.row])
+    cell.configure(character: viewModel.data[indexPath.row])
     return cell
   }
 }
