@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterListViewController: UIViewController, UICollectionViewDataSource {
+class CharacterListViewController: UIViewController {
   private let viewModel: CharacterListViewModelType = CharacterListViewModel()
   
   private lazy var collectionView = UICollectionView(
@@ -17,8 +17,8 @@ class CharacterListViewController: UIViewController, UICollectionViewDataSource 
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupColectionView()
     viewModel.viewDidLoad()
+    setupColectionView()
   }
   
   func setupColectionView() {
@@ -57,7 +57,9 @@ class CharacterListViewController: UIViewController, UICollectionViewDataSource 
     // Return
     return UICollectionViewCompositionalLayout(section: section)
   }
-  
+}
+
+extension CharacterListViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.data.count
   }
