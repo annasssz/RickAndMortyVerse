@@ -27,6 +27,7 @@ class CharacterListViewController: UIViewController {
     collectionView.register(CharacterItemCell.self, forCellWithReuseIdentifier: CharacterItemCell.identifier)
     collectionView.frame = view.bounds
     collectionView.dataSource = self
+    collectionView.delegate = self
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {
@@ -59,7 +60,7 @@ class CharacterListViewController: UIViewController {
   }
 }
 
-extension CharacterListViewController: UICollectionViewDataSource {
+extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.data.count
   }
@@ -71,5 +72,15 @@ extension CharacterListViewController: UICollectionViewDataSource {
     
     cell.configure(character: viewModel.data[indexPath.row])
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    viewModel.loadMore(index: indexPath) { [weak self] in
+      DispatchQueue.main.async { [weak self] in
+        guard let self else { return }
+
+        self.collectionView.reloadData()
+      }
+    }
   }
 }
