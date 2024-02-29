@@ -7,6 +7,23 @@
 
 import UIKit
 
+enum CharacterStatus: String {
+  case alive
+  case dead
+  case unknown
+  
+  var color: UIColor {
+    switch self {
+    case .alive:
+      return .systemGreen
+    case .dead:
+      return .systemRed
+    case .unknown:
+      return .systemOrange
+    }
+  }
+}
+
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = "CharacterItemCell"
   
@@ -94,5 +111,11 @@ class CharacterItemCell: UICollectionViewCell {
   func configure(character: CharacterItem) {
     nameLabel.text = character.name
     statusLabel.text = character.status
+    
+    if let status = CharacterStatus(rawValue: character.status.lowercased()) {
+      statusView.backgroundColor = status.color
+    } else {
+      statusView.backgroundColor = .gray
+    }
   }
 }
