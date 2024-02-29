@@ -19,6 +19,7 @@ class CharacterListViewController: UIViewController {
     super.viewDidLoad()
     viewModel.viewDidLoad()
     setupColectionView()
+    setupBindings()
   }
   
   func setupColectionView() {
@@ -28,6 +29,22 @@ class CharacterListViewController: UIViewController {
     collectionView.frame = view.bounds
     collectionView.dataSource = self
     collectionView.delegate = self
+  }
+  
+  func setupBindings() {
+    viewModel.dataState
+      .bind { [weak self] state in
+        switch state {
+        case .error:
+          print("error")
+        case .loaded:
+          self?.collectionView.reloadData()
+        case .loading:
+          print("loading")
+        default:
+          break
+        }
+      }
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {
@@ -75,12 +92,6 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
   }
   
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    viewModel.loadMore(index: indexPath) { [weak self] in
-      DispatchQueue.main.async { [weak self] in
-        guard let self else { return }
-
-        self.collectionView.reloadData()
-      }
-    }
+    viewModel.loadMore(index: indexPath)
   }
 }

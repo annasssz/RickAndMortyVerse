@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BBCBD9B2B91030B00E2CF1C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBD9A2B91030B00E2CF1C /* Observable.swift */; };
 		2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED132B8EF28A0035C91F /* AppDelegate.swift */; };
 		2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */; };
 		2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED172B8EF28A0035C91F /* CharacterListViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BBCBD9A2B91030B00E2CF1C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2BCBED102B8EF28A0035C91F /* RickAndMortyVerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyVerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCBED132B8EF28A0035C91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BBCBD992B9102D600E2CF1C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2BBCBD9C2B91033500E2CF1C /* observable */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2BBCBD9C2B91033500E2CF1C /* observable */ = {
+			isa = PBXGroup;
+			children = (
+				2BBCBD9A2B91030B00E2CF1C /* Observable.swift */,
+			);
+			path = observable;
+			sourceTree = "<group>";
+		};
 		2BCBED072B8EF28A0035C91F = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +104,7 @@
 			children = (
 				2BCBED272B8EF6BD0035C91F /* Application */,
 				2BCBED432B8F07BD0035C91F /* Domain */,
+				2BBCBD992B9102D600E2CF1C /* Utilities */,
 				2BCBED312B8EFEB70035C91F /* Network */,
 				2BCBED282B8EF6DB0035C91F /* Scenes */,
 				2BCBED2C2B8EF7E50035C91F /* Resources */,
@@ -328,6 +347,7 @@
 				2BCBED3C2B8F00AE0035C91F /* APIURLBuilder.swift in Sources */,
 				2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */,
 				2BCBED3F2B8F01D60035C91F /* Endpoint.swift in Sources */,
+				2BBCBD9B2B91030B00E2CF1C /* Observable.swift in Sources */,
 				2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */,
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
 				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,

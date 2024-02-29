@@ -17,14 +17,14 @@ public enum DataState {
 
 protocol CharacterListViewModelType {
   func viewDidLoad()
-  func loadMore(index: IndexPath, completion: (() -> Void)?)
+  func loadMore(index: IndexPath)
   
-  var dataState: DataState { get }
+  var dataState: Observable<DataState> { get }
   var data: [CharacterItem] { get }
 }
 
 class CharacterListViewModel: CharacterListViewModelType {
-  var dataState: DataState = .idle
+  var dataState: Observable<DataState> = .just(.idle)
   var data: [CharacterItem] = []
   var currentPage: Int = 1
   var paginationInfo: PaginationInfo?
@@ -41,33 +41,32 @@ class CharacterListViewModel: CharacterListViewModelType {
     }
   }
   
-  func loadMore(index: IndexPath, completion: (() -> Void)? = nil) {
+  func loadMore(index: IndexPath) {
     Task { [weak self] in
       guard let self else { return }
-      guard self.dataState != .loading else { return }
+      guard self.dataState.value != .loading else { return }
       guard let paginationInfo = paginationInfo, currentPage < paginationInfo.pages, index.row == data.count - 1 else { return }
 
       self.currentPage += 1
 
-      await fetchCharacters(completion: completion)
+      await fetchCharacters()
     }
   }
   
-  private func fetchCharacters(completion: (() -> Void)? = nil) async {
+  private func fetchCharacters() async {
     do {
       let repository = CharacterRepository()
       let response = try await repository.getCharacters(page: currentPage)
       self.paginationInfo = response.info
       map(data: response.results)
-      completion?()
     } catch {
-      dataState = .error
+      dataState.onNext(.error)
       print(error)
     }
   }
   
   private func map(data: [CharacterItem]) {
     self.data.append(contentsOf: data)
-    dataState = data.count == 0 ? .finished : .loaded
+    dataState.onNext(data.count == 0 ? .finished : .loaded)
   }
 }
