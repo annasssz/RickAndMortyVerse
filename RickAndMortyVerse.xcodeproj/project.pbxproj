@@ -26,6 +26,7 @@
 		2BCBED532B9004D30035C91F /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED522B9004D30035C91F /* CharacterListViewModel.swift */; };
 		2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED562B9036580035C91F /* CharacterItemCell.swift */; };
 		2BCBED5C2B903B5C0035C91F /* CharacterRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */; };
+		2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2BCBED522B9004D30035C91F /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		2BCBED562B9036580035C91F /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
 		2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoring.swift; sourceTree = "<group>"; };
+		2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCBED4E2B8F22510035C91F /* CharacterResponse.swift */,
+				2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */,
 				2BCBED492B8F1DC50035C91F /* CharacterItem.swift */,
 				2BCBED4C2B8F20500035C91F /* CharacterLocation.swift */,
 			);
@@ -327,6 +330,7 @@
 				2BCBED3F2B8F01D60035C91F /* Endpoint.swift in Sources */,
 				2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */,
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
+				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,
 				2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,
 				2BCBED5C2B903B5C0035C91F /* CharacterRepositoring.swift in Sources */,

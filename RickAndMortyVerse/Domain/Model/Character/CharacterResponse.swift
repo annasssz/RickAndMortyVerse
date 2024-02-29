@@ -8,5 +8,6 @@
 import Foundation
 
 struct CharacterResponse: Decodable {
+  let info: PaginationInfo
   let results: [CharacterItem]
 }
