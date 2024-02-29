@@ -8,7 +8,7 @@
 import UIKit
 
 class CharacterListViewController: UIViewController, UICollectionViewDataSource {
-  private let viewModel = CharacterListViewModelImpl(characterFetcher: FetchCharactersUseCase())
+  private let viewModel: CharacterListViewModelType = CharacterListViewModel()
   
   private lazy var collectionView = UICollectionView(
     frame: .zero,
