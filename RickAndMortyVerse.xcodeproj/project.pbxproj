@@ -23,6 +23,8 @@
 		2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED4C2B8F20500035C91F /* CharacterLocation.swift */; };
 		2BCBED4F2B8F22510035C91F /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED4E2B8F22510035C91F /* CharacterResponse.swift */; };
 		2BCBED512B8FF1B90035C91F /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BCBED502B8FF1B90035C91F /* ColorAssets.xcassets */; };
+		2BCBED532B9004D30035C91F /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED522B9004D30035C91F /* CharacterListViewModel.swift */; };
+		2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED562B9036580035C91F /* CharacterItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		2BCBED4C2B8F20500035C91F /* CharacterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLocation.swift; sourceTree = "<group>"; };
 		2BCBED4E2B8F22510035C91F /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 		2BCBED502B8FF1B90035C91F /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		2BCBED522B9004D30035C91F /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		2BCBED562B9036580035C91F /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +80,9 @@
 		2BCBED122B8EF28A0035C91F /* RickAndMortyVerse */ = {
 			isa = PBXGroup;
 			children = (
+				2BCBED272B8EF6BD0035C91F /* Application */,
 				2BCBED432B8F07BD0035C91F /* Domain */,
 				2BCBED312B8EFEB70035C91F /* Network */,
-				2BCBED272B8EF6BD0035C91F /* Application */,
 				2BCBED282B8EF6DB0035C91F /* Scenes */,
 				2BCBED2C2B8EF7E50035C91F /* Resources */,
 			);
@@ -105,6 +109,7 @@
 		2BCBED292B8EF7210035C91F /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				2BCBED552B90362F0035C91F /* Cell */,
 				2BCBED2B2B8EF7410035C91F /* ViewController */,
 				2BCBED2A2B8EF73A0035C91F /* ViewModel */,
 			);
@@ -114,6 +119,7 @@
 		2BCBED2A2B8EF73A0035C91F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2BCBED522B9004D30035C91F /* CharacterListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +231,14 @@
 			path = Character;
 			sourceTree = "<group>";
 		};
+		2BCBED552B90362F0035C91F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BCBED562B9036580035C91F /* CharacterItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,12 +314,14 @@
 				2BCBED3C2B8F00AE0035C91F /* APIURLBuilder.swift in Sources */,
 				2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */,
 				2BCBED3F2B8F01D60035C91F /* Endpoint.swift in Sources */,
+				2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */,
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
 				2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,
 				2BCBED422B8F01F00035C91F /* HTTPMethod.swift in Sources */,
 				2BCBED372B8EFFA10035C91F /* NetworkServiceType.swift in Sources */,
 				2BCBED392B8EFFAE0035C91F /* NetworkService.swift in Sources */,
+				2BCBED532B9004D30035C91F /* CharacterListViewModel.swift in Sources */,
 				2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */,
 				2BCBED462B8F07D30035C91F /* CharacterRepository.swift in Sources */,
 				2BCBED4A2B8F1DC50035C91F /* CharacterItem.swift in Sources */,
