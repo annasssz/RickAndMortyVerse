@@ -54,6 +54,7 @@ class CharacterListViewModel: CharacterListViewModelType {
   }
   
   private func fetchCharacters() async {
+    dataState.onNext(.loading)
     do {
       let repository = CharacterRepository()
       let response = try await repository.getCharacters(page: currentPage)

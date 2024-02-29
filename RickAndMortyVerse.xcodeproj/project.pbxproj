@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BBCBD9B2B91030B00E2CF1C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBD9A2B91030B00E2CF1C /* Observable.swift */; };
+		2BBCBD9F2B91130200E2CF1C /* LoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBD9E2B91130200E2CF1C /* LoadingFooterView.swift */; };
 		2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED132B8EF28A0035C91F /* AppDelegate.swift */; };
 		2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */; };
 		2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED172B8EF28A0035C91F /* CharacterListViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		2BBCBD9A2B91030B00E2CF1C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2BBCBD9E2B91130200E2CF1C /* LoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooterView.swift; sourceTree = "<group>"; };
 		2BCBED102B8EF28A0035C91F /* RickAndMortyVerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyVerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCBED132B8EF28A0035C91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,17 +72,25 @@
 		2BBCBD992B9102D600E2CF1C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2BBCBD9C2B91033500E2CF1C /* observable */,
+				2BBCBD9C2B91033500E2CF1C /* Observable */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2BBCBD9C2B91033500E2CF1C /* observable */ = {
+		2BBCBD9C2B91033500E2CF1C /* Observable */ = {
 			isa = PBXGroup;
 			children = (
 				2BBCBD9A2B91030B00E2CF1C /* Observable.swift */,
 			);
-			path = observable;
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		2BBCBD9D2B9112EF00E2CF1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BBCBD9E2B91130200E2CF1C /* LoadingFooterView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2BCBED072B8EF28A0035C91F = {
@@ -132,6 +142,7 @@
 		2BCBED292B8EF7210035C91F /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				2BBCBD9D2B9112EF00E2CF1C /* View */,
 				2BCBED552B90362F0035C91F /* Cell */,
 				2BCBED2B2B8EF7410035C91F /* ViewController */,
 				2BCBED2A2B8EF73A0035C91F /* ViewModel */,
@@ -350,6 +361,7 @@
 				2BBCBD9B2B91030B00E2CF1C /* Observable.swift in Sources */,
 				2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */,
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
+				2BBCBD9F2B91130200E2CF1C /* LoadingFooterView.swift in Sources */,
 				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,
 				2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,

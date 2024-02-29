@@ -26,6 +26,8 @@ class CharacterListViewController: UIViewController {
     view.addSubview(collectionView)
     
     collectionView.register(CharacterItemCell.self, forCellWithReuseIdentifier: CharacterItemCell.identifier)
+    collectionView.register(LoadingFooterView.self, forSupplementaryViewOfKind: "footer", withReuseIdentifier: "LoadingFooterView")
+    
     collectionView.frame = view.bounds
     collectionView.dataSource = self
     collectionView.delegate = self
@@ -39,8 +41,6 @@ class CharacterListViewController: UIViewController {
           print("error")
         case .loaded:
           self?.collectionView.reloadData()
-        case .loading:
-          print("loading")
         default:
           break
         }
@@ -48,16 +48,12 @@ class CharacterListViewController: UIViewController {
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {
-    // Define Item Size
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200.0))
     
-    // Create Item
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     
-    // Define Group Size to fit two items side by side
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200.0))
     
-    // Since we want two items side by side, set the group size width to half
     let group = NSCollectionLayoutGroup.horizontal(
       layoutSize: groupSize,
       repeatingSubitem: item,
@@ -66,13 +62,14 @@ class CharacterListViewController: UIViewController {
     
     group.interItemSpacing = .fixed(16)
     
-    // Create Section
+    let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44)), elementKind: "footer", alignment: .bottom)
+    
     let section = NSCollectionLayoutSection(group: group)
     
     section.interGroupSpacing = 16
     section.contentInsets = .init(top: 12, leading: 12, bottom: 12, trailing: 12)
+    section.boundarySupplementaryItems = [footer]
     
-    // Return
     return UICollectionViewCompositionalLayout(section: section)
   }
 }
@@ -93,5 +90,11 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
   
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     viewModel.loadMore(index: indexPath)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: "footer", withReuseIdentifier: "LoadingFooterView", for: indexPath) as? LoadingFooterView else { return UICollectionReusableView() }
+    footer.isLoading = viewModel.dataState.value
+    return footer
   }
 }
