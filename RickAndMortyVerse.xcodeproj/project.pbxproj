@@ -10,6 +10,7 @@
 		2BBCBD9B2B91030B00E2CF1C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBD9A2B91030B00E2CF1C /* Observable.swift */; };
 		2BBCBD9F2B91130200E2CF1C /* LoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBD9E2B91130200E2CF1C /* LoadingFooterView.swift */; };
 		2BBCBDA22B9152EC00E2CF1C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBDA12B9152EC00E2CF1C /* UIColor.swift */; };
+		2BBCBDA42B921FD400E2CF1C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCBDA32B921FD400E2CF1C /* UIImageView.swift */; };
 		2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED132B8EF28A0035C91F /* AppDelegate.swift */; };
 		2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */; };
 		2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED172B8EF28A0035C91F /* CharacterListViewController.swift */; };
@@ -36,6 +37,7 @@
 		2BBCBD9A2B91030B00E2CF1C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2BBCBD9E2B91130200E2CF1C /* LoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooterView.swift; sourceTree = "<group>"; };
 		2BBCBDA12B9152EC00E2CF1C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2BBCBDA32B921FD400E2CF1C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		2BCBED102B8EF28A0035C91F /* RickAndMortyVerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyVerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCBED132B8EF28A0035C91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCBED152B8EF28A0035C91F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBCBDA12B9152EC00E2CF1C /* UIColor.swift */,
+				2BBCBDA32B921FD400E2CF1C /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				2BCBED422B8F01F00035C91F /* HTTPMethod.swift in Sources */,
 				2BCBED372B8EFFA10035C91F /* NetworkServiceType.swift in Sources */,
 				2BCBED392B8EFFAE0035C91F /* NetworkService.swift in Sources */,
+				2BBCBDA42B921FD400E2CF1C /* UIImageView.swift in Sources */,
 				2BCBED532B9004D30035C91F /* CharacterListViewModel.swift in Sources */,
 				2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */,
 				2BCBED462B8F07D30035C91F /* CharacterRepository.swift in Sources */,

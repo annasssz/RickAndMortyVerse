@@ -27,6 +27,8 @@ enum CharacterStatus: String {
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = "CharacterItemCell"
   
+  private var currentItem: CharacterItem?
+
   private lazy var nameLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
@@ -65,7 +67,6 @@ class CharacterItemCell: UICollectionViewCell {
     imageView.contentMode = .scaleAspectFill
     imageView.layer.cornerRadius = 8
     imageView.clipsToBounds = true
-    imageView.image = UIImage(named: "hi")
     return imageView
   }()
   
@@ -112,13 +113,25 @@ class CharacterItemCell: UICollectionViewCell {
   }
   
   func configure(character: CharacterItem) {
+    guard currentItem == nil else { return }
+
+    self.currentItem = character
+    
     nameLabel.text = character.name
     statusLabel.text = character.status
     
+    setImage(with: character.image)
+
     if let status = CharacterStatus(rawValue: character.status.lowercased()) {
       statusView.backgroundColor = status.color
     } else {
       statusView.backgroundColor = .clear
     }
+  }
+  
+  private func setImage(with image: String) {
+    guard let url = URL(string: image) else { return }
+
+    imageView.load(url: url)
   }
 }
