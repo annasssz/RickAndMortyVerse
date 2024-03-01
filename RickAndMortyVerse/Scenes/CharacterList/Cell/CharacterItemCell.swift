@@ -15,11 +15,11 @@ enum CharacterStatus: String {
   var color: UIColor {
     switch self {
     case .alive:
-      return .systemGreen
+      return .green
     case .dead:
-      return .systemRed
+      return .red
     case .unknown:
-      return .systemOrange
+      return .orange
     }
   }
 }
@@ -29,24 +29,23 @@ class CharacterItemCell: UICollectionViewCell {
   
   private lazy var nameLabel: UILabel = {
     let label = UILabel()
-    label.textAlignment = .left
-    label.textColor = .black
+    label.textAlignment = .center
+    label.textColor = UIColor.steelBlueColor
     label.numberOfLines = 2
-    label.font = .systemFont(ofSize: 14)
+    label.font = .systemFont(ofSize: 16, weight: .semibold)
     return label
   }()
   
   private lazy var statusLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .left
-    label.textColor = .gray
-    label.font = .systemFont(ofSize: 14)
+    label.textColor = UIColor.slateGrayColor
+    label.font = .systemFont(ofSize: 14, weight: .semibold)
     return label
   }()
   
-  private let statusView: UIView = {
+  private lazy var statusView: UIView = {
     let view = UIView()
-    view.backgroundColor = .green
     view.layer.cornerRadius = 5
     view.translatesAutoresizingMaskIntoConstraints = false
     view.widthAnchor.constraint(equalToConstant: 10).isActive = true
@@ -64,7 +63,7 @@ class CharacterItemCell: UICollectionViewCell {
   private lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
-    imageView.layer.cornerRadius = 10
+    imageView.layer.cornerRadius = 8
     imageView.clipsToBounds = true
     imageView.image = UIImage(named: "hi")
     return imageView
@@ -87,25 +86,25 @@ class CharacterItemCell: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+      imageView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
       imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
       imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-      imageView.heightAnchor.constraint(equalToConstant: 110),
+      imageView.heightAnchor.constraint(equalToConstant: 150),
       
-      nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+      nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
       nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
       nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
       
-      stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+      stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
       stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-      stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+      stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
     ])
   }
   
   private func applyBorder() {
     layer.borderWidth = 1
     layer.borderColor = UIColor.systemGray3.cgColor
-    layer.cornerRadius = 10
+    layer.cornerRadius = 8
   }
   
   func configure(character: CharacterItem) {
@@ -115,7 +114,7 @@ class CharacterItemCell: UICollectionViewCell {
     if let status = CharacterStatus(rawValue: character.status.lowercased()) {
       statusView.backgroundColor = status.color
     } else {
-      statusView.backgroundColor = .gray
+      statusView.backgroundColor = .clear
     }
   }
 }
