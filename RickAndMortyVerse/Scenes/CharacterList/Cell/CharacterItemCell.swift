@@ -26,8 +26,6 @@ enum CharacterStatus: String {
 
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = "CharacterItemCell"
-  
-  private var currentItem: CharacterItem?
 
   private lazy var nameLabel: UILabel = {
     let label = UILabel()
@@ -113,10 +111,6 @@ class CharacterItemCell: UICollectionViewCell {
   }
   
   func configure(character: CharacterItem) {
-    guard currentItem == nil else { return }
-
-    self.currentItem = character
-    
     nameLabel.text = character.name
     statusLabel.text = character.status
     

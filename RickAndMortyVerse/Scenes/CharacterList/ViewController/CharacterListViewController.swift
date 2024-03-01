@@ -16,12 +16,28 @@ class CharacterListViewController: UIViewController {
     collectionViewLayout: createLayout()
   )
   
+  private lazy var searchController: UISearchController = {
+    let searchController = UISearchController(searchResultsController: nil)
+    searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Search Characters"
+    return searchController
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.viewDidLoad()
     setupColectionView()
     setupBindings()
     setupRefreshControl()
+    setupSearchBar()
+  }
+  
+  func setupSearchBar() {
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+    navigationItem.title = "Characters"
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   func setupColectionView() {
@@ -90,7 +106,7 @@ class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel.data.count
+    return viewModel.filteredData.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,7 +114,7 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
       return UICollectionViewCell(frame: .zero)
     }
     
-    cell.configure(character: viewModel.data[indexPath.row])
+    cell.configure(character: viewModel.filteredData[indexPath.row])
     return cell
   }
   
@@ -110,5 +126,12 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
     guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: "footer", withReuseIdentifier: "LoadingFooterView", for: indexPath) as? LoadingFooterView else { return UICollectionReusableView() }
     footer.isLoading = viewModel.dataState.value
     return footer
+  }
+}
+
+extension CharacterListViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let searchText = searchController.searchBar.text else { return }
+    viewModel.filterData(with: searchText)
   }
 }
