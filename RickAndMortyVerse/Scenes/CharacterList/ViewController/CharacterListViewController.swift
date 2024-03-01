@@ -9,6 +9,7 @@ import UIKit
 
 class CharacterListViewController: UIViewController {
   private let viewModel: CharacterListViewModelType = CharacterListViewModel()
+  private lazy var refreshControl = UIRefreshControl()
   
   private lazy var collectionView = UICollectionView(
     frame: .zero,
@@ -20,6 +21,7 @@ class CharacterListViewController: UIViewController {
     viewModel.viewDidLoad()
     setupColectionView()
     setupBindings()
+    setupRefreshControl()
   }
   
   func setupColectionView() {
@@ -41,10 +43,20 @@ class CharacterListViewController: UIViewController {
           print("error")
         case .loaded:
           self?.collectionView.reloadData()
+          self?.refreshControl.endRefreshing()
         default:
           break
         }
       }
+  }
+  
+  private func setupRefreshControl() {
+    refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    collectionView.addSubview(refreshControl)
+  }
+  
+  @objc private func refreshData() {
+    viewModel.viewDidLoad()
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {

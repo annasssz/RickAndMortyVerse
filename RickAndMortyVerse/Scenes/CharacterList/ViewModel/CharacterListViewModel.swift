@@ -33,9 +33,7 @@ class CharacterListViewModel: CharacterListViewModelType {
   
   func viewDidLoad() {
     Task { [weak self] in
-      guard let self else {
-        return
-      }
+      guard let self else { return }
       
       await self.fetchCharacters()
     }
