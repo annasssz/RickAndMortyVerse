@@ -10,10 +10,9 @@ import UIKit
 class AdditionalDetailCell: UICollectionViewCell  {
   static let identifier = "AdditionalDetailCell"
   
-  private lazy var genderLabel: UILabel = {
+  private lazy var descriptionLabel: UILabel = {
     let view = UILabel()
     view.textAlignment = .center
-    view.text = "GENDER" //წასაშლელი
     view.layer.borderWidth = 1
     view.layer.borderColor = UIColor.systemGray3.cgColor
     view.layer.cornerRadius = 8
@@ -23,10 +22,9 @@ class AdditionalDetailCell: UICollectionViewCell  {
     return view
   }()
   
-  private lazy var genderInfoLabel: UILabel = {
+  private lazy var infoLabel: UILabel = {
     let view = UILabel()
     view.textAlignment = .center
-    view.text = "Male" //წასაშლელი
     view.textColor = UIColor.steelBlueColor
     view.numberOfLines = 2
     view.font = .systemFont(ofSize: 16, weight: .semibold)
@@ -34,7 +32,7 @@ class AdditionalDetailCell: UICollectionViewCell  {
   }()
   
   private lazy var genderStackView: UIStackView = {
-    let view = UIStackView(arrangedSubviews: [genderLabel, genderInfoLabel])
+    let view = UIStackView(arrangedSubviews: [descriptionLabel, infoLabel])
     view.axis = .horizontal
     view.layer.cornerRadius = 8
     view.spacing = 8
@@ -45,6 +43,11 @@ class AdditionalDetailCell: UICollectionViewCell  {
     super.init(frame: frame)
     setupUI()
     applyBorder()
+  }
+  
+  func configure(description: String, text: String) {
+    descriptionLabel.text = description
+    infoLabel.text = text
   }
   
   private func applyBorder() {

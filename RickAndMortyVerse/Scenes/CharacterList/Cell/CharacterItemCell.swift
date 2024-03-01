@@ -7,22 +7,22 @@
 
 import UIKit
 
-enum CharacterStatus: String {
-  case alive
-  case dead
-  case unknown
-  
-  var color: UIColor {
-    switch self {
-    case .alive:
-      return .green
-    case .dead:
-      return .red
-    case .unknown:
-      return .orange
-    }
-  }
-}
+//enum CharacterStatus: String {
+//  case alive
+//  case dead
+//  case unknown
+//  
+//  var color: UIColor {
+//    switch self {
+//    case .alive:
+//      return .green
+//    case .dead:
+//      return .red
+//    case .unknown:
+//      return .orange
+//    }
+//  }
+//}
 
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = "CharacterItemCell"
@@ -112,15 +112,11 @@ class CharacterItemCell: UICollectionViewCell {
   
   func configure(character: CharacterItem) {
     nameLabel.text = character.name
-    statusLabel.text = character.status
+    statusLabel.text = character.status.rawValue
     
     setImage(with: character.image)
 
-    if let status = CharacterStatus(rawValue: character.status.lowercased()) {
-      statusView.backgroundColor = status.color
-    } else {
-      statusView.backgroundColor = .clear
-    }
+    statusView.backgroundColor = character.status.color
   }
   
   private func setImage(with image: String) {

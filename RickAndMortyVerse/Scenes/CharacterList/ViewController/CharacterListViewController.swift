@@ -123,8 +123,10 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let item = viewModel.filteredData[indexPath.row]
+
     DispatchQueue.main.async { [weak self] in
-      let detailViewController = CharacterDetailInfoViewController()
+      let detailViewController = CharacterDetailInfoViewController(item: item)
       self?.navigationController?.pushViewController(detailViewController, animated: true)
     }
   }

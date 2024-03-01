@@ -12,7 +12,6 @@ class ItemInfoCell: UICollectionViewCell  {
   
   private lazy var imageBackgroundView: UIView = {
     let view = UIView()
-    view.backgroundColor = .green //წაშაშლელი
     view.layer.cornerRadius = 125
     view.addSubview(imageView)
     view.addSubview(statusView)
@@ -31,7 +30,6 @@ class ItemInfoCell: UICollectionViewCell  {
     let view = UILabel()
     view.textColor = UIColor.black
     view.textAlignment = .center
-    view.text = "Alive" //წაშაშლელი
     view.font = .systemFont(ofSize: 18, weight: .semibold)
     return view
   }()
@@ -39,8 +37,6 @@ class ItemInfoCell: UICollectionViewCell  {
   private lazy var statusView: UIView = {
     let view = UIView()
     view.layer.cornerRadius = 5
-    view.backgroundColor = .green
-    
     view.widthAnchor.constraint(equalToConstant: 90).isActive = true
     view.heightAnchor.constraint(equalToConstant: 30).isActive = true
     view.addSubview(statusLabel)
@@ -52,7 +48,6 @@ class ItemInfoCell: UICollectionViewCell  {
     view.textAlignment = .center
     view.textColor = UIColor.black
     view.numberOfLines = 2
-    view.text = "Rick Sanchez cluser Princess" //წაშაშლელი
     view.font = .systemFont(ofSize: 24, weight: .semibold)
     return view
   }()
@@ -67,6 +62,18 @@ class ItemInfoCell: UICollectionViewCell  {
     fatalError("init(coder:) has not been implemented")
   }
   
+  func configure(with item: CharacterItem) {
+    if let url = URL(string: item.image) {
+      imageView.load(url: url)
+    }
+    
+    statusLabel.text = item.status.rawValue
+    nameLabel.text = item.name
+
+    statusView.backgroundColor = item.status.color
+    imageBackgroundView.backgroundColor = item.status.color
+  }
+
   private func applyBorder() {
     layer.borderWidth = 1
     layer.borderColor = UIColor.systemGray3.cgColor

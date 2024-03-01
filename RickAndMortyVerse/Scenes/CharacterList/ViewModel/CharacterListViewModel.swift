@@ -31,7 +31,7 @@ class CharacterListViewModel: CharacterListViewModelType {
   var currentPage: Int = 1
   var paginationInfo: PaginationInfo?
   
-  init() { }
+  init() {}
   
   func viewDidLoad() {
     Task { [weak self] in

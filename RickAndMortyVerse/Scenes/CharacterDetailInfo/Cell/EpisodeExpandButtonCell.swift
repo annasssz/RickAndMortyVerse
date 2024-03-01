@@ -14,7 +14,6 @@ class EpisodeExpandButtonCell: UICollectionViewCell {
     let button = UIButton()
     button.setTitle("Episode", for: .normal)
     button.setTitleColor(.black, for: .normal)
-    // Add action for button tap to handle expansion/collapse
     button.addTarget(self, action: #selector(expandButtonTapped), for: .touchUpInside)
     return button
   }()
@@ -49,7 +48,6 @@ class EpisodeExpandButtonCell: UICollectionViewCell {
       expandButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
       expandButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
     ])
-    
   }
   
   @objc private func expandButtonTapped() {
