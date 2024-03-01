@@ -31,6 +31,7 @@
 		2BCBED572B9036580035C91F /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED562B9036580035C91F /* CharacterItemCell.swift */; };
 		2BCBED5C2B903B5C0035C91F /* CharacterRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */; };
 		2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */; };
+		2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		2BCBED562B9036580035C91F /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
 		2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoring.swift; sourceTree = "<group>"; };
 		2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCount.swift; sourceTree = "<group>"; };
+		2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		2BCBED282B8EF6DB0035C91F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2BD743402B922C410017EEB4 /* CharacterDetailInfo */,
 				2BCBED292B8EF7210035C91F /* CharacterList */,
 			);
 			path = Scenes;
@@ -297,6 +300,22 @@
 			path = Character;
 			sourceTree = "<group>";
 		};
+		2BD743402B922C410017EEB4 /* CharacterDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2BD743412B922C5E0017EEB4 /* ViewController */,
+				2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */,
+			);
+			path = CharacterDetailInfo;
+			sourceTree = "<group>";
+		};
+		2BD743412B922C5E0017EEB4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,6 +396,7 @@
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
 				2BBCBD9F2B91130200E2CF1C /* LoadingFooterView.swift in Sources */,
 				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,
+				2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */,
 				2BBCBDA22B9152EC00E2CF1C /* UIColor.swift in Sources */,
 				2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,

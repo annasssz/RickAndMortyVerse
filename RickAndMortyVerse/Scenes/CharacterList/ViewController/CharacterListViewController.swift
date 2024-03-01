@@ -122,6 +122,13 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
     viewModel.loadMore(index: indexPath)
   }
   
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    DispatchQueue.main.async { [weak self] in
+      let detailViewController = CharacterDetailInfoViewController()
+      self?.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+  }
+  
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: "footer", withReuseIdentifier: "LoadingFooterView", for: indexPath) as? LoadingFooterView else { return UICollectionReusableView() }
     footer.isLoading = viewModel.dataState.value
