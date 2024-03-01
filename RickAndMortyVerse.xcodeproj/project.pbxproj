@@ -32,6 +32,9 @@
 		2BCBED5C2B903B5C0035C91F /* CharacterRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */; };
 		2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */; };
 		2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */; };
+		2BD743472B922F670017EEB4 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743462B922F670017EEB4 /* ItemInfoCell.swift */; };
+		2BD743492B922FE90017EEB4 /* AdditionalDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */; };
+		2BD7434C2B9230370017EEB4 /* EpisodeExpandButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		2BCBED5B2B903B5C0035C91F /* CharacterRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoring.swift; sourceTree = "<group>"; };
 		2BCBED5D2B903EEA0035C91F /* CharacterCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCount.swift; sourceTree = "<group>"; };
 		2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInfoViewController.swift; sourceTree = "<group>"; };
+		2BD743462B922F670017EEB4 /* ItemInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
+		2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailCell.swift; sourceTree = "<group>"; };
+		2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeExpandButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,8 +309,8 @@
 		2BD743402B922C410017EEB4 /* CharacterDetailInfo */ = {
 			isa = PBXGroup;
 			children = (
+				2BD743452B922F480017EEB4 /* Cell */,
 				2BD743412B922C5E0017EEB4 /* ViewController */,
-				2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */,
 			);
 			path = CharacterDetailInfo;
 			sourceTree = "<group>";
@@ -312,8 +318,19 @@
 		2BD743412B922C5E0017EEB4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2BD743452B922F480017EEB4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD743462B922F670017EEB4 /* ItemInfoCell.swift */,
+				2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */,
+				2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD7434C2B9230370017EEB4 /* EpisodeExpandButtonCell.swift in Sources */,
 				2BCBED4F2B8F22510035C91F /* CharacterResponse.swift in Sources */,
 				2BCBED3C2B8F00AE0035C91F /* APIURLBuilder.swift in Sources */,
 				2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */,
@@ -396,10 +414,12 @@
 				2BCBED342B8EFF450035C91F /* NetworkError.swift in Sources */,
 				2BBCBD9F2B91130200E2CF1C /* LoadingFooterView.swift in Sources */,
 				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,
+				2BD743492B922FE90017EEB4 /* AdditionalDetailCell.swift in Sources */,
 				2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */,
 				2BBCBDA22B9152EC00E2CF1C /* UIColor.swift in Sources */,
 				2BCBED4D2B8F20500035C91F /* CharacterLocation.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,
+				2BD743472B922F670017EEB4 /* ItemInfoCell.swift in Sources */,
 				2BCBED5C2B903B5C0035C91F /* CharacterRepositoring.swift in Sources */,
 				2BCBED422B8F01F00035C91F /* HTTPMethod.swift in Sources */,
 				2BCBED372B8EFFA10035C91F /* NetworkServiceType.swift in Sources */,
