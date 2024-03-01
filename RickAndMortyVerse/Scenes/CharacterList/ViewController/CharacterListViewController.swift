@@ -71,8 +71,7 @@ class CharacterListViewController: UIViewController {
     
     let group = NSCollectionLayoutGroup.horizontal(
       layoutSize: groupSize,
-      repeatingSubitem: item,
-      count: 2
+      subitems: [item, item]
     )
     
     group.interItemSpacing = .fixed(16)
