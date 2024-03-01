@@ -13,8 +13,8 @@ struct CharacterItem: Decodable {
   let status: CharacterStatus
   let species: String
   let gender: String
-  let location: Location
   let image: String
+  let episode: [String]
 }
 
 enum CharacterStatus: String, Codable {
