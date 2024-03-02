@@ -29,7 +29,7 @@ struct ViewValues {
   
   static let defaultStatusView: CGFloat = 10
   static let defaultHeightImage: CGFloat = 150
-  static let defaultStatusViewWidth: CGFloat = 60
+  static let defaultStatusViewWidth: CGFloat = 90
   static let defaultDescriptionLabelWidth: CGFloat = 100
 
   static let defaultHeightCell: CGFloat = 44

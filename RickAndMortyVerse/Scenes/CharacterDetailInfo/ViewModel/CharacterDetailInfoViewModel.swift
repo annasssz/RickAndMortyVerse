@@ -42,7 +42,6 @@ class CharacterDetailInfoViewModel: CharacterDetailInfoViewModelType {
       map(data: response)
     } catch {
       dataState.onNext(.error)
-      print(error)
     }
   }
   

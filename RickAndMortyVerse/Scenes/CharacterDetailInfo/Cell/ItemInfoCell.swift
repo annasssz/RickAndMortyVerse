@@ -30,7 +30,7 @@ class ItemInfoCell: UICollectionViewCell  {
     let view = UILabel()
     view.textColor = UIColor.white
     view.textAlignment = .center
-    view.font = .systemFont(ofSize: ViewValues.normalSize, weight: .regular)
+    view.font = .systemFont(ofSize: ViewValues.smallSize, weight: .bold)
     return view
   }()
   
@@ -104,7 +104,7 @@ class ItemInfoCell: UICollectionViewCell  {
       statusView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: ViewValues.defaultPadding),
       statusView.centerXAnchor.constraint(equalTo: centerXAnchor),
       statusView.widthAnchor.constraint(equalToConstant: ViewValues.defaultStatusViewWidth),
-      statusView.heightAnchor.constraint(equalToConstant: ViewValues.defaultStatusViewWidth/2),
+      statusView.heightAnchor.constraint(equalToConstant: ViewValues.defaultStatusViewWidth/3),
       
       statusLabel.centerYAnchor.constraint(equalTo: statusView.centerYAnchor),
       statusLabel.centerXAnchor.constraint(equalTo: statusView.centerXAnchor),

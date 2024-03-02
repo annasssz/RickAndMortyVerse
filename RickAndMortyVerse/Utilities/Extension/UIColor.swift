@@ -10,8 +10,8 @@ import UIKit
 extension UIColor {
   static let slateGrayColor = UIColor(named: "slateGray")!
   static let steelBlueColor = UIColor(named: "steelBlue")!
-  static let green = UIColor(named: "green")!
-  static let orange = UIColor(named: "orange")!
-  static let red = UIColor(named: "red")!
+  static let green = UIColor(named: "customGreen")!
+  static let orange = UIColor(named: "customOrange")!
+  static let red = UIColor(named: "customRed")!
   static let textColor = UIColor(named: "textColor")!
 }
