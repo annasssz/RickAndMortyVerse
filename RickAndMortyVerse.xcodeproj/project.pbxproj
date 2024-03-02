@@ -37,6 +37,7 @@
 		2BD7434F2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7434E2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift */; };
 		2BD743522B9249DC0017EEB4 /* EpisodeCellCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743512B9249DC0017EEB4 /* EpisodeCellCharacters.swift */; };
 		2BD743542B928B200017EEB4 /* EpisodeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743532B928B200017EEB4 /* EpisodeHeaderView.swift */; };
+		2BD7435D2B92AB790017EEB4 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7435C2B92AB790017EEB4 /* Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		2BD7434E2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		2BD743512B9249DC0017EEB4 /* EpisodeCellCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellCharacters.swift; sourceTree = "<group>"; };
 		2BD743532B928B200017EEB4 /* EpisodeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderView.swift; sourceTree = "<group>"; };
+		2BD7435C2B92AB790017EEB4 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				2BBCBDA12B9152EC00E2CF1C /* UIColor.swift */,
 				2BBCBDA32B921FD400E2CF1C /* UIImageView.swift */,
+				2BD7435C2B92AB790017EEB4 /* Identifiable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				2BCBED532B9004D30035C91F /* CharacterListViewModel.swift in Sources */,
 				2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */,
 				2BCBED462B8F07D30035C91F /* CharacterRepository.swift in Sources */,
+				2BD7435D2B92AB790017EEB4 /* Identifiable.swift in Sources */,
 				2BCBED4A2B8F1DC50035C91F /* CharacterItem.swift in Sources */,
 				2BD743522B9249DC0017EEB4 /* EpisodeCellCharacters.swift in Sources */,
 			);

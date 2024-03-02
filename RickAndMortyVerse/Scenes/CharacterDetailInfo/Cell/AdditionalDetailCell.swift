@@ -8,16 +8,17 @@
 import UIKit
 
 class AdditionalDetailCell: UICollectionViewCell  {
-  static let identifier = "AdditionalDetailCell"
+  static let identifier = String(describing: AdditionalDetailCell.self)
   
   private lazy var descriptionLabel: UILabel = {
     let view = UILabel()
     view.textAlignment = .center
     view.layer.borderWidth = 1
-    view.layer.cornerRadius = 8
     view.layer.borderColor = UIColor.systemGray3.cgColor
+    view.layer.cornerRadius = 8
     view.clipsToBounds = true
     view.textColor = UIColor.slateGrayColor
+    view.numberOfLines = 2
     view.backgroundColor = .systemGray5
     view.font = .systemFont(ofSize: 16, weight: .semibold)
     return view

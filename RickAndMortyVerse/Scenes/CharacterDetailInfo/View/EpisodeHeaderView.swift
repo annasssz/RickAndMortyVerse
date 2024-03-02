@@ -8,7 +8,7 @@
 import UIKit
 
 class EpisodeHeaderView: UICollectionReusableView {
-  static let reuseIdentifier = "EpisodeHeaderView"
+  static let reuseIdentifier = String(describing: EpisodeHeaderView.self)
   
   var onSelect: (() -> Void)?
   

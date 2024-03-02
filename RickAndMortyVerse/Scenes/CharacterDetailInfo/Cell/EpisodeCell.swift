@@ -21,7 +21,7 @@ var episodes: [Episode] = [
 ]
 
 class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
-  static let identifier = "EpisodeCell"
+  static let identifier = String(describing: EpisodeCell.self)
   
   private lazy var collectionView = UICollectionView(
     frame: .zero,

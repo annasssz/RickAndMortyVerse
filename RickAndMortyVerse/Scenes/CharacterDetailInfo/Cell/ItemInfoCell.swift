@@ -8,7 +8,7 @@
 import UIKit
 
 class ItemInfoCell: UICollectionViewCell  {
-  static let identifier = "ItemInfoCell"
+  static let identifier = String(describing: ItemInfoCell.self)
   
   private lazy var imageBackgroundView: UIView = {
     let view = UIView()

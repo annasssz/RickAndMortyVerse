@@ -8,7 +8,7 @@
 import UIKit
 
 class CharacterItemCell: UICollectionViewCell {
-  static let identifier = "CharacterItemCell"
+  static let identifier = String(describing: CharacterItemCell.self)
 
   private lazy var nameLabel: UILabel = {
     let view = UILabel()

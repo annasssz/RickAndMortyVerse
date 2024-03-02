@@ -8,7 +8,7 @@
 import UIKit
 
 class EpisodeCellCharacters: UICollectionViewCell {
-  static let identifier = "EpisodeCellCharacters"
+  static let identifier = String(describing: EpisodeCellCharacters.self)
   
   private lazy var imageView: UIImageView = {
     let view = UIImageView()
