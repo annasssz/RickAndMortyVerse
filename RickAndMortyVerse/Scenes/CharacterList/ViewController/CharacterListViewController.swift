@@ -54,6 +54,8 @@ class CharacterListViewController: UIViewController {
   private func setupBindings() {
     viewModel.dataState
       .bind { [weak self] state in
+        self?.refreshControl.endRefreshing()
+        
         switch state {
         case .error:
           print("error")
