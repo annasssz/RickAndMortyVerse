@@ -18,8 +18,7 @@ class AdditionalDetailCell: UICollectionViewCell  {
     view.layer.cornerRadius = 8
     view.clipsToBounds = true
     view.textColor = UIColor.slateGrayColor
-    view.numberOfLines = 2
-    view.backgroundColor = .systemGray5
+    view.backgroundColor = .systemGray6
     view.font = .systemFont(ofSize: 16, weight: .semibold)
     return view
   }()
@@ -28,6 +27,11 @@ class AdditionalDetailCell: UICollectionViewCell  {
     let view = UILabel()
     view.textAlignment = .center
     view.textColor = UIColor.steelBlueColor
+    view.backgroundColor = .systemGray6
+    view.clipsToBounds = true
+    view.layer.borderWidth = 1
+    view.layer.borderColor = UIColor.systemGray3.cgColor
+    view.layer.cornerRadius = 8
     view.numberOfLines = 2
     view.font = .systemFont(ofSize: 16, weight: .semibold)
     return view
@@ -36,7 +40,6 @@ class AdditionalDetailCell: UICollectionViewCell  {
   private lazy var genderStackView: UIStackView = {
     let view = UIStackView(arrangedSubviews: [descriptionLabel, infoLabel])
     view.axis = .horizontal
-    view.layer.cornerRadius = 8
     view.spacing = 8
     return view
   }()
@@ -44,18 +47,11 @@ class AdditionalDetailCell: UICollectionViewCell  {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupUI()
-    applyBorder()
   }
   
   func configure(description: String, text: String) {
     descriptionLabel.text = description
     infoLabel.text = text
-  }
-  
-  private func applyBorder() {
-    layer.borderWidth = 1
-    layer.borderColor = UIColor.systemGray3.cgColor
-    layer.cornerRadius = 8
   }
   
   required init?(coder: NSCoder) {
@@ -67,8 +63,9 @@ class AdditionalDetailCell: UICollectionViewCell  {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
-    
+    descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
+      descriptionLabel.widthAnchor.constraint(equalToConstant: 100),
       genderStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
       genderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
       genderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),

@@ -163,8 +163,8 @@
 		2BCBED282B8EF6DB0035C91F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2BD743402B922C410017EEB4 /* CharacterDetailInfo */,
 				2BCBED292B8EF7210035C91F /* CharacterList */,
+				2BD743402B922C410017EEB4 /* CharacterDetailInfo */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

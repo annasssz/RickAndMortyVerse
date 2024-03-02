@@ -48,7 +48,7 @@ class CharacterDetailInfoViewController: UIViewController {
     let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
       switch sectionIndex {
       case 0:
-        return createLayoutForCell(withHeight: 350)
+        return createLayoutForCell(withHeight: 330)
       case 1:
         return createLayoutForCell(withHeight: 30)
       default:
@@ -107,11 +107,11 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       
       switch indexPath.row {
       case 0:
-        detailCell.configure(description: "GENDER", text: viewModel.characterItem.gender)
+        detailCell.configure(description: "GENDER:", text: viewModel.characterItem.gender)
       case 1:
-        detailCell.configure(description: "SPECIES", text: viewModel.characterItem.species)
+        detailCell.configure(description: "SPECIES:", text: viewModel.characterItem.species)
       case 2:
-        detailCell.configure(description: "STATUS", text: viewModel.characterItem.status.rawValue)
+        detailCell.configure(description: "STATUS:", text: viewModel.characterItem.status.rawValue)
       default:
         break
       }
