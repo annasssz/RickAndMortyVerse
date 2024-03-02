@@ -7,41 +7,24 @@
 
 import UIKit
 
-//enum CharacterStatus: String {
-//  case alive
-//  case dead
-//  case unknown
-//  
-//  var color: UIColor {
-//    switch self {
-//    case .alive:
-//      return .green
-//    case .dead:
-//      return .red
-//    case .unknown:
-//      return .orange
-//    }
-//  }
-//}
-
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = "CharacterItemCell"
 
   private lazy var nameLabel: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .center
-    label.textColor = UIColor.steelBlueColor
-    label.numberOfLines = 2
-    label.font = .systemFont(ofSize: 16, weight: .semibold)
-    return label
+    let view = UILabel()
+    view.textAlignment = .center
+    view.textColor = UIColor.steelBlueColor
+    view.numberOfLines = 2
+    view.font = .systemFont(ofSize: 16, weight: .semibold)
+    return view
   }()
   
   private lazy var statusLabel: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .left
-    label.textColor = UIColor.slateGrayColor
-    label.font = .systemFont(ofSize: 14, weight: .semibold)
-    return label
+    let view = UILabel()
+    view.textAlignment = .left
+    view.textColor = UIColor.slateGrayColor
+    view.font = .systemFont(ofSize: 14, weight: .semibold)
+    return view
   }()
   
   private lazy var statusView: UIView = {
@@ -54,18 +37,18 @@ class CharacterItemCell: UICollectionViewCell {
   }()
   
   private lazy var stackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel])
-    stackView.axis = .horizontal
-    stackView.spacing = 8
-    return stackView
+    let view = UIStackView(arrangedSubviews: [statusView, statusLabel])
+    view.axis = .horizontal
+    view.spacing = 8
+    return view
   }()
   
   private lazy var imageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFill
-    imageView.layer.cornerRadius = 8
-    imageView.clipsToBounds = true
-    return imageView
+    let view = UIImageView()
+    view.contentMode = .scaleAspectFill
+    view.layer.cornerRadius = 8
+    view.clipsToBounds = true
+    return view
   }()
   
   override init(frame: CGRect) {

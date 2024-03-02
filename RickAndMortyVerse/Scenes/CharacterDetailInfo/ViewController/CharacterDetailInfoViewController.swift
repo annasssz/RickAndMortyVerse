@@ -38,7 +38,7 @@ class CharacterDetailInfoViewController: UIViewController {
     
     collectionView.register(ItemInfoCell.self, forCellWithReuseIdentifier: ItemInfoCell.identifier)
     collectionView.register(AdditionalDetailCell.self, forCellWithReuseIdentifier: AdditionalDetailCell.identifier)
-    collectionView.register(EpisodeExpandButtonCell.self, forCellWithReuseIdentifier: EpisodeExpandButtonCell.identifier)
+    collectionView.register(EpisodeCell.self, forCellWithReuseIdentifier: EpisodeCell.identifier)
     
     collectionView.frame = view.bounds
     collectionView.dataSource = self
@@ -52,7 +52,7 @@ class CharacterDetailInfoViewController: UIViewController {
       case 1:
         return createLayoutForCell(withHeight: 30)
       default:
-        return createLayoutForCell(withHeight: 50)
+        return createLayoutForCell(withHeight: 500)
       }
     }
     
@@ -118,7 +118,7 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       
       return detailCell
     default:
-      return collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeExpandButtonCell", for: indexPath) as! EpisodeExpandButtonCell
+      return collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCell", for: indexPath) as! EpisodeCell
     }
   }
 }

@@ -33,8 +33,10 @@
 		2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */; };
 		2BD743472B922F670017EEB4 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743462B922F670017EEB4 /* ItemInfoCell.swift */; };
 		2BD743492B922FE90017EEB4 /* AdditionalDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */; };
-		2BD7434C2B9230370017EEB4 /* EpisodeExpandButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */; };
+		2BD7434C2B9230370017EEB4 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7434B2B9230370017EEB4 /* EpisodeCell.swift */; };
 		2BD7434F2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7434E2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift */; };
+		2BD743522B9249DC0017EEB4 /* EpisodeCellCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743512B9249DC0017EEB4 /* EpisodeCellCharacters.swift */; };
+		2BD743542B928B200017EEB4 /* EpisodeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743532B928B200017EEB4 /* EpisodeHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +68,10 @@
 		2BD743432B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInfoViewController.swift; sourceTree = "<group>"; };
 		2BD743462B922F670017EEB4 /* ItemInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
 		2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailCell.swift; sourceTree = "<group>"; };
-		2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeExpandButtonCell.swift; sourceTree = "<group>"; };
+		2BD7434B2B9230370017EEB4 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		2BD7434E2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInfoViewModel.swift; sourceTree = "<group>"; };
+		2BD743512B9249DC0017EEB4 /* EpisodeCellCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellCharacters.swift; sourceTree = "<group>"; };
+		2BD743532B928B200017EEB4 /* EpisodeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD743452B922F480017EEB4 /* Cell */,
+				2BD743592B92A1720017EEB4 /* View */,
 				2BD743412B922C5E0017EEB4 /* ViewController */,
 				2BD7434D2B92337B0017EEB4 /* ViewModel */,
 			);
@@ -328,7 +333,8 @@
 			children = (
 				2BD743462B922F670017EEB4 /* ItemInfoCell.swift */,
 				2BD743482B922FE90017EEB4 /* AdditionalDetailCell.swift */,
-				2BD7434B2B9230370017EEB4 /* EpisodeExpandButtonCell.swift */,
+				2BD7434B2B9230370017EEB4 /* EpisodeCell.swift */,
+				2BD743512B9249DC0017EEB4 /* EpisodeCellCharacters.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -339,6 +345,14 @@
 				2BD7434E2B9233A20017EEB4 /* CharacterDetailInfoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BD743592B92A1720017EEB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BD743532B928B200017EEB4 /* EpisodeHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD7434C2B9230370017EEB4 /* EpisodeExpandButtonCell.swift in Sources */,
+				2BD7434C2B9230370017EEB4 /* EpisodeCell.swift in Sources */,
 				2BCBED4F2B8F22510035C91F /* CharacterResponse.swift in Sources */,
 				2BCBED3C2B8F00AE0035C91F /* APIURLBuilder.swift in Sources */,
 				2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */,
@@ -425,6 +439,7 @@
 				2BCBED5E2B903EEA0035C91F /* CharacterCount.swift in Sources */,
 				2BD743492B922FE90017EEB4 /* AdditionalDetailCell.swift in Sources */,
 				2BD743442B922C9E0017EEB4 /* CharacterDetailInfoViewController.swift in Sources */,
+				2BD743542B928B200017EEB4 /* EpisodeHeaderView.swift in Sources */,
 				2BBCBDA22B9152EC00E2CF1C /* UIColor.swift in Sources */,
 				2BCBED142B8EF28A0035C91F /* AppDelegate.swift in Sources */,
 				2BD743472B922F670017EEB4 /* ItemInfoCell.swift in Sources */,
@@ -437,6 +452,7 @@
 				2BCBED162B8EF28A0035C91F /* SceneDelegate.swift in Sources */,
 				2BCBED462B8F07D30035C91F /* CharacterRepository.swift in Sources */,
 				2BCBED4A2B8F1DC50035C91F /* CharacterItem.swift in Sources */,
+				2BD743522B9249DC0017EEB4 /* EpisodeCellCharacters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,8 +594,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortyVerse/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -594,6 +612,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ana.PieChart.RickAndMortyVerse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -609,8 +628,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortyVerse/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -625,6 +646,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ana.PieChart.RickAndMortyVerse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

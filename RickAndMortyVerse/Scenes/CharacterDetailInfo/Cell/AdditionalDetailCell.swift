@@ -14,10 +14,11 @@ class AdditionalDetailCell: UICollectionViewCell  {
     let view = UILabel()
     view.textAlignment = .center
     view.layer.borderWidth = 1
-    view.layer.borderColor = UIColor.systemGray3.cgColor
     view.layer.cornerRadius = 8
-    view.textColor = .black
-    view.numberOfLines = 2
+    view.layer.borderColor = UIColor.systemGray3.cgColor
+    view.clipsToBounds = true
+    view.textColor = UIColor.slateGrayColor
+    view.backgroundColor = .systemGray5
     view.font = .systemFont(ofSize: 16, weight: .semibold)
     return view
   }()
