@@ -13,19 +13,19 @@ class CharacterItemCell: UICollectionViewCell {
   private var character: CharacterItem? {
     didSet{
       guard let character = character else { return }
-        self.nameLabel.text = character.name
-        self.statusLabel.text = character.status.rawValue
-        self.setImage(with: character.image)
-        self.statusView.backgroundColor = character.status.color
+      self.nameLabel.text = character.name
+      self.statusLabel.text = character.status.rawValue
+      self.setImage(with: character.image)
+      self.statusView.backgroundColor = character.status.color
     }
   }
-
+  
   private lazy var nameLabel: UILabel = {
     let view = UILabel()
     view.textAlignment = .center
-    view.textColor = UIColor.steelBlueColor
+    view.textColor = UIColor.textColor
     view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 16, weight: .semibold)
+    view.font = .systemFont(ofSize: 16, weight: .medium)
     return view
   }()
   
@@ -75,7 +75,7 @@ class CharacterItemCell: UICollectionViewCell {
     super.prepareForReuse()
     imageView.image = .init(named: "")
   }
-
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -95,6 +95,7 @@ class CharacterItemCell: UICollectionViewCell {
       nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
       nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
       nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+      nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
       
       stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
       stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),

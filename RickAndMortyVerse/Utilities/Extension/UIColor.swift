@@ -15,4 +15,3 @@ extension UIColor {
   static let red = UIColor(named: "red")!
   static let textColor = UIColor(named: "textColor")!
 }
-

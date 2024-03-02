@@ -63,7 +63,11 @@ class AdditionalDetailCell: UICollectionViewCell  {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
-    descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    
+    [descriptionLabel].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     NSLayoutConstraint.activate([
       descriptionLabel.widthAnchor.constraint(equalToConstant: 100),
       genderStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),

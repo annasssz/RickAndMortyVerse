@@ -19,4 +19,10 @@ extension UIImageView {
       }
     }
   }
+  
+  func loadAvatar(characterId: Int, completion: @escaping (UIImage?) -> Void) {
+    let urlPath = "https://rickandmortyapi.com/api/character/avatar/\(characterId).jpeg"
+    guard let url = URL(string: urlPath) else { return }
+    load(url: url, completion: completion)
+  }
 }

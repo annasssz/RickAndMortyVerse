@@ -76,7 +76,7 @@ class CharacterListViewController: UIViewController {
   
   func createLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(240))
-    
+
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(240))
@@ -100,7 +100,7 @@ class CharacterListViewController: UIViewController {
   }
 }
 
-extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CharacterListViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.filteredData.count
   }
@@ -118,15 +118,6 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
     viewModel.loadMore(index: indexPath)
   }
   
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let item = viewModel.filteredData[indexPath.row]
-
-    DispatchQueue.main.async { [weak self] in
-      let detailViewController = CharacterDetailInfoViewController(item: item)
-      self?.navigationController?.pushViewController(detailViewController, animated: true)
-    }
-  }
-  
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: "footer", withReuseIdentifier: "LoadingFooterView", for: indexPath) as? LoadingFooterView else { return UICollectionReusableView() }
     footer.isLoading = viewModel.dataState.value
@@ -134,6 +125,15 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
   }
 }
 
+extension CharacterListViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let item = viewModel.filteredData[indexPath.row]
+    
+    let detailViewController = CharacterDetailInfoViewController(item: item)
+    self.navigationController?.pushViewController(detailViewController, animated: true)
+  }
+}
+                                        
 extension CharacterListViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     guard let searchText = searchController.searchBar.text else { return }

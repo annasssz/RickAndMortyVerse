@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  CharacterResponse.swift
 //  RickAndMortyVerse
 //
 //  Created by Ana Mepisashvili on 2/28/24.

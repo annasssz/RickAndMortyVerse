@@ -8,20 +8,20 @@
 import UIKit
 
 struct Episode {
-  let title: String
+  let title: String?
   let characters: [Int]
   var isCollapsed: Bool = true
 }
 
-var episodes: [Episode] = [
-  .init(title: "Episode 1", characters: [1,2,3,4,5,6,7,8,9,9,9,9,9,9]),
-  .init(title: "Episode 2", characters: [1,2]),
-  .init(title: "Episode 2", characters: [1,2]),
-  .init(title: "Episode 3", characters: [1,2,3,4,5,6,7,8]),
-]
-
-class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
+class EpisodeCell: UICollectionViewCell {
   static let identifier = String(describing: EpisodeCell.self)
+  var didselect: ((Int) -> ())?
+  
+  private var episodes: [Episode] = [] {
+    didSet {
+      collectionView.reloadData()
+    }
+  }
   
   private lazy var collectionView = UICollectionView(
     frame: .zero,
@@ -32,14 +32,15 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
     let view = UILabel()
     view.textAlignment = .center
     view.text = "Episode"
-    view.textColor = UIColor.steelBlueColor
+    view.textColor = UIColor.textColor
     view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 24, weight: .semibold)
+    view.font = .systemFont(ofSize: 24, weight: .medium)
     return view
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    setupCollectionView()
     setupUI()
   }
   
@@ -47,16 +48,24 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
     fatalError("init(coder:) has not been implemented")
   }
   
+  func configure (_ episodes: [Episode]) {
+    self.episodes = episodes
+  }
+  
+  private func setupCollectionView() {
+    collectionView.register(EpisodeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EpisodeHeaderView.reuseIdentifier)
+    collectionView.register(EpisodeCellCharacters.self, forCellWithReuseIdentifier: EpisodeCellCharacters.identifier)
+    
+    collectionView.isScrollEnabled = false
+    collectionView.dataSource = self
+    collectionView.delegate = self
+  }
+  
   private func setupUI() {
     [collectionView, episodeLabel].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
-    
-    collectionView.register(EpisodeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EpisodeHeaderView.reuseIdentifier)
-    collectionView.register(EpisodeCellCharacters.self, forCellWithReuseIdentifier: EpisodeCellCharacters.identifier)
-    
-    collectionView.dataSource = self
     
     NSLayoutConstraint.activate([
       episodeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
@@ -83,7 +92,7 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
       let section = NSCollectionLayoutSection(group: group)
       section.orthogonalScrollingBehavior = .continuous
       
-      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
       let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
       section.boundarySupplementaryItems = [header]
       
@@ -92,6 +101,9 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
     return layout
   }
   
+}
+
+extension EpisodeCell: UICollectionViewDataSource{
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     episodes.count
   }
@@ -101,8 +113,8 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCellCharacters", for: indexPath)
-    cell.backgroundColor = .red
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCellCharacters", for: indexPath) as? EpisodeCellCharacters else { return UICollectionViewCell() }
+    cell.configure(characterId: episodes[indexPath.section].characters[indexPath.row])
     return cell
   }
   
@@ -114,12 +126,18 @@ class EpisodeCell: UICollectionViewCell, UICollectionViewDataSource {
     let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeHeaderView.reuseIdentifier, for: indexPath) as! EpisodeHeaderView
     header.configure(with: episodes[indexPath.section].title)
     header.onSelect = {
-      print(indexPath.section)
       
-      episodes[indexPath.section].isCollapsed.toggle()
+      self.episodes[indexPath.section].isCollapsed.toggle()
       collectionView.reloadSections(IndexSet(integer: indexPath.section))
     }
     
     return header
+  }
+}
+
+extension EpisodeCell: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let id = episodes[indexPath.section].characters[indexPath.row]
+    didselect?(id)
   }
 }

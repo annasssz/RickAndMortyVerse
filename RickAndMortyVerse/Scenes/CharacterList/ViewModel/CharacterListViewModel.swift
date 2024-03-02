@@ -74,15 +74,9 @@ class CharacterListViewModel: CharacterListViewModelType {
     }
     
     let filteredData = data.filter { character in
-      print(
-        "ssss", character.name.lowercased(),
-        "and", searchText.lowercased(),
-        "result",  character.name.lowercased().contains(searchText.lowercased())
-      )
       return character.name.lowercased().contains(searchText.lowercased())
     }
     
-    print("data", filteredData.map(\.name))
     self.filteredData = filteredData
     dataState.onNext(.loaded)
   }

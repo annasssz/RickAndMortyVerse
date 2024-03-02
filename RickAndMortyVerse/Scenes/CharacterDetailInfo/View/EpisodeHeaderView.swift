@@ -14,7 +14,26 @@ class EpisodeHeaderView: UICollectionReusableView {
   
   private let episodeNameLabel: UILabel = {
     let view = UILabel()
-    view.textAlignment = .center
+    view.textAlignment = .left
+    view.textColor = UIColor.steelBlueColor
+    view.font = .systemFont(ofSize: 18, weight: .semibold)
+    return view
+  }()
+  
+  private lazy var dotView: UIView = {
+    let view = UIView()
+    view.layer.cornerRadius = 5
+    view.backgroundColor = .steelBlueColor
+    view.widthAnchor.constraint(equalToConstant: 10).isActive = true
+    view.heightAnchor.constraint(equalToConstant: 10).isActive = true
+    return view
+  }()
+  
+  private lazy var stackView: UIStackView = {
+    let view = UIStackView(arrangedSubviews: [dotView, episodeNameLabel])
+    view.axis = .horizontal
+    view.alignment = .center
+    view.spacing = 8
     return view
   }()
   
@@ -28,20 +47,20 @@ class EpisodeHeaderView: UICollectionReusableView {
   }
   
   private func setupViews() {
-    [episodeNameLabel].forEach {
+    [stackView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
     
     NSLayoutConstraint.activate([
-      episodeNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-      episodeNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-      episodeNameLabel.topAnchor.constraint(equalTo: topAnchor),
-      episodeNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+      stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      stackView.topAnchor.constraint(equalTo: topAnchor),
+      stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
   
-  func configure(with title: String) {
+  func configure(with title: String?) {
     episodeNameLabel.text = title
   }
   

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+
 class CharacterDetailInfoViewController: UIViewController {
   private let viewModel: CharacterDetailInfoViewModel
-
+  
   private lazy var collectionView = UICollectionView(
     frame: .zero,
     collectionViewLayout: createLayout()
@@ -25,6 +26,7 @@ class CharacterDetailInfoViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel.viewDidLoad()
     largeTitleDisplayMode()
     setupColectionView()
   }
@@ -52,7 +54,7 @@ class CharacterDetailInfoViewController: UIViewController {
       case 1:
         return createLayoutForCell(withHeight: 30)
       default:
-        return createLayoutForCell(withHeight: 500)
+        return createLayoutForCell(withHeight: CGFloat(self.viewModel.episodes.count * 44))
       }
     }
     
@@ -61,10 +63,10 @@ class CharacterDetailInfoViewController: UIViewController {
 }
 
 func createLayoutForCell(withHeight height: CGFloat) -> NSCollectionLayoutSection {
-  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(height))
+  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(height))
   let item = NSCollectionLayoutItem(layoutSize: itemSize)
   
-  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(height))
+  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(height))
   let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
   group.interItemSpacing = .fixed(16)
   
@@ -97,7 +99,7 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       guard let infoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemInfoCell", for: indexPath) as? ItemInfoCell else {
         return UICollectionViewCell()
       }
-
+      
       infoCell.configure(with: viewModel.characterItem)
       return infoCell
     case 1:
@@ -118,7 +120,15 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       
       return detailCell
     default:
-      return collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCell", for: indexPath) as! EpisodeCell
+      guard let episodeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCell", for: indexPath) as? EpisodeCell else {
+        return UICollectionViewCell()
+      }
+      episodeCell.configure(viewModel.episodes)
+      episodeCell.didselect = { [weak self] id in
+        //        let detailViewController = CharacterDetailInfoViewController()
+        //        self?.navigationController?.pushViewController(detailViewController, animated: true)
+      }
+      return episodeCell
     }
   }
 }

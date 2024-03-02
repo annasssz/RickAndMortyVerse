@@ -46,9 +46,9 @@ class ItemInfoCell: UICollectionViewCell  {
   private lazy var nameLabel: UILabel = {
     let view = UILabel()
     view.textAlignment = .center
-    view.textColor = UIColor.steelBlueColor
+    view.textColor = UIColor.textColor
     view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 24, weight: .semibold)
+    view.font = .systemFont(ofSize: 24, weight: .medium)
     return view
   }()
   

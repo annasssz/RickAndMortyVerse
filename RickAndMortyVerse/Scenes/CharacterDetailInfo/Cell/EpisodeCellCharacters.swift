@@ -10,6 +10,16 @@ import UIKit
 class EpisodeCellCharacters: UICollectionViewCell {
   static let identifier = String(describing: EpisodeCellCharacters.self)
   
+  private var characterId: Int? {
+    didSet {
+      guard let characterId = characterId else {
+        imageView.image = nil
+        return
+      }
+      setImage(for: characterId)
+    }
+  }
+  
   private lazy var imageView: UIImageView = {
     let view = UIImageView()
     view.clipsToBounds = true
@@ -20,11 +30,19 @@ class EpisodeCellCharacters: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupUI()
-    contentView.backgroundColor = .red
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  func configure(characterId: Int) {
+    self.characterId = characterId
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView.image = nil
   }
   
   private func setupUI() {
@@ -41,4 +59,11 @@ class EpisodeCellCharacters: UICollectionViewCell {
     ])
   }
   
+  private func setImage(for characterId: Int) {
+    imageView.loadAvatar(characterId: characterId){ [weak self] loadedImage in
+      if characterId == self?.characterId {
+        self?.imageView.image = loadedImage
+      }
+    }
+  }
 }

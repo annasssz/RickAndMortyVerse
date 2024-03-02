@@ -1,5 +1,5 @@
 //
-//  CharacterCount.swift
+//  PaginationInfo.swift
 //  RickAndMortyVerse
 //
 //  Created by Ana Mepisashvili on 2/29/24.
