@@ -58,11 +58,7 @@ class CharacterListViewController: UIViewController {
         case .error:
           print("error")
         case .loaded:
-          DispatchQueue.main.async {
-            self?.collectionView.collectionViewLayout.invalidateLayout()
-            self?.collectionView.reloadData()
-            self?.refreshControl.endRefreshing()
-          }
+          self?.collectionView.reloadData()
         default:
           break
         }

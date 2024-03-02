@@ -64,7 +64,9 @@ class ItemInfoCell: UICollectionViewCell  {
   
   func configure(with item: CharacterItem) {
     if let url = URL(string: item.image) {
-      imageView.load(url: url)
+      imageView.load(url: url) { [weak self] loadedImage in
+        self?.imageView.image = loadedImage
+      }
     }
     
     statusLabel.text = item.status.rawValue

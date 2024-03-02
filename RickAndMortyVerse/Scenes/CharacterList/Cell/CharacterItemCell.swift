@@ -9,6 +9,16 @@ import UIKit
 
 class CharacterItemCell: UICollectionViewCell {
   static let identifier = String(describing: CharacterItemCell.self)
+  
+  private var character: CharacterItem? {
+    didSet{
+      guard let character = character else { return }
+        self.nameLabel.text = character.name
+        self.statusLabel.text = character.status.rawValue
+        self.setImage(with: character.image)
+        self.statusView.backgroundColor = character.status.color
+    }
+  }
 
   private lazy var nameLabel: UILabel = {
     let view = UILabel()
@@ -60,6 +70,11 @@ class CharacterItemCell: UICollectionViewCell {
     super.layoutSublayers(of: layer)
     applyBorder()
   }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView.image = .init(named: "")
+  }
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -94,17 +109,15 @@ class CharacterItemCell: UICollectionViewCell {
   }
   
   func configure(character: CharacterItem) {
-    nameLabel.text = character.name
-    statusLabel.text = character.status.rawValue
-    
-    setImage(with: character.image)
-
-    statusView.backgroundColor = character.status.color
+    self.character = character
   }
   
   private func setImage(with image: String) {
     guard let url = URL(string: image) else { return }
-
-    imageView.load(url: url)
+    imageView.load(url: url) { [weak self] loadedImage in
+      if image == self?.character?.image {
+        self?.imageView.image = loadedImage
+      }
+    }
   }
 }

@@ -3,4 +3,117 @@
    uuid = "B6B461A8-C77B-4AAD-895E-BCF0EBCDB766"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "loadMore(index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 8c0d8b2cf9c2cba1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RickAndMortyVerse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "816">
+               </Location>
+               <Location
+                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 862bc577b9850fbc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RickAndMortyVerse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 32bc6e6ea6666793"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RickAndMortyVerse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41D3D317-302E-4BD1-8615-37C1DF930089"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "filterData(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD69979E-9066-4023-BC30-CEA35F5BC22B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "filterData(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C216700C-91E0-4405-B97D-FA2AE6452CA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "map(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
