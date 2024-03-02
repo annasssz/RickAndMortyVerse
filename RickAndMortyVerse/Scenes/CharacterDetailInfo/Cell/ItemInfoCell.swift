@@ -12,7 +12,7 @@ class ItemInfoCell: UICollectionViewCell  {
   
   private lazy var imageBackgroundView: UIView = {
     let view = UIView()
-    view.layer.cornerRadius = 125
+    view.layer.cornerRadius = ViewValues.defaultHeightImage / 2
     view.addSubview(imageView)
     view.addSubview(statusView)
     return view
@@ -22,7 +22,7 @@ class ItemInfoCell: UICollectionViewCell  {
     let view = UIImageView()
     view.clipsToBounds = true
     view.contentMode = .scaleAspectFill
-    view.layer.cornerRadius = 125
+    view.layer.cornerRadius = ViewValues.defaultHeightImage / 2
     return view
   }()
   
@@ -30,15 +30,13 @@ class ItemInfoCell: UICollectionViewCell  {
     let view = UILabel()
     view.textColor = UIColor.white
     view.textAlignment = .center
-    view.font = .systemFont(ofSize: 18, weight: .regular)
+    view.font = .systemFont(ofSize: ViewValues.normalSize, weight: .regular)
     return view
   }()
   
   private lazy var statusView: UIView = {
     let view = UIView()
-    view.layer.cornerRadius = 5
-    view.widthAnchor.constraint(equalToConstant: 90).isActive = true
-    view.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    view.layer.cornerRadius = ViewValues.defaultStatusViewCornerRadius
     view.addSubview(statusLabel)
     return view
   }()
@@ -47,8 +45,8 @@ class ItemInfoCell: UICollectionViewCell  {
     let view = UILabel()
     view.textAlignment = .center
     view.textColor = UIColor.textColor
-    view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 24, weight: .medium)
+    view.numberOfLines = ViewValues.multiplierTwo
+    view.font = .systemFont(ofSize: ViewValues.doubleSize, weight: .medium)
     return view
   }()
   
@@ -77,8 +75,8 @@ class ItemInfoCell: UICollectionViewCell  {
   }
 
   private func applyBorder() {
-    layer.borderWidth = 1
-    layer.cornerRadius = 8
+    layer.borderWidth = ViewValues.borderWidth
+    layer.cornerRadius = ViewValues.defaultCornerRadius
     layer.borderColor = UIColor.systemGray3.cgColor
   }
   
@@ -93,24 +91,28 @@ class ItemInfoCell: UICollectionViewCell  {
     }
     
     NSLayoutConstraint.activate([
-      imageBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-      imageBackgroundView.heightAnchor.constraint(equalToConstant: 250),
-      imageBackgroundView.widthAnchor.constraint(equalToConstant: 250),
-      imageBackgroundView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0),
+      imageBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewValues.defaultPadding),
+      imageBackgroundView.heightAnchor.constraint(equalToConstant: ViewValues.defaultHeightImage),
+      imageBackgroundView.widthAnchor.constraint(equalToConstant: ViewValues.defaultHeightImage),
+      imageBackgroundView.centerXAnchor.constraint(equalTo: centerXAnchor),
       
-      imageView.topAnchor.constraint(equalTo: imageBackgroundView.topAnchor, constant: 5),
-      imageView.leadingAnchor.constraint(equalTo: imageBackgroundView.leadingAnchor, constant: 5),
-      imageView.trailingAnchor.constraint(equalTo: imageBackgroundView.trailingAnchor, constant: -5),
-      imageView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -5),
+      imageView.topAnchor.constraint(equalTo: imageBackgroundView.topAnchor, constant: ViewValues.smallPadding),
+      imageView.leadingAnchor.constraint(equalTo: imageBackgroundView.leadingAnchor, constant: ViewValues.smallPadding),
+      imageView.trailingAnchor.constraint(equalTo: imageBackgroundView.trailingAnchor, constant: -ViewValues.smallPadding),
+      imageView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -ViewValues.smallPadding),
       
-      statusView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: 10),
-      statusView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
+      statusView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: ViewValues.defaultPadding),
+      statusView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      statusView.widthAnchor.constraint(equalToConstant: ViewValues.defaultStatusViewWidth),
+      statusView.heightAnchor.constraint(equalToConstant: ViewValues.defaultStatusViewWidth/2),
       
-      statusLabel.centerYAnchor.constraint(equalTo: statusView.centerYAnchor, constant: 0),
-      statusLabel.centerXAnchor.constraint(equalTo: statusView.centerXAnchor, constant: 0),
+      statusLabel.centerYAnchor.constraint(equalTo: statusView.centerYAnchor),
+      statusLabel.centerXAnchor.constraint(equalTo: statusView.centerXAnchor),
       
-      nameLabel.topAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: 30),
-      nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
+      nameLabel.topAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor),
+      nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+      nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+      nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
     ])
   }
 }

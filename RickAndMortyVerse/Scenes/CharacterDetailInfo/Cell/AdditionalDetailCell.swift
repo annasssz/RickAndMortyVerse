@@ -16,9 +16,9 @@ class AdditionalDetailCell: UICollectionViewCell  {
     view.clipsToBounds = true
     view.textAlignment = .center
     view.textColor = UIColor.slateGrayColor
-    view.font = .systemFont(ofSize: 16, weight: .semibold)
-    view.layer.borderWidth = 1
-    view.layer.cornerRadius = 8
+    view.font = .systemFont(ofSize: ViewValues.normalSize, weight: .semibold)
+    view.layer.borderWidth = ViewValues.borderWidth
+    view.layer.cornerRadius = ViewValues.defaultCornerRadius
     view.layer.borderColor = UIColor.systemGray3.cgColor
     return view
   }()
@@ -29,17 +29,17 @@ class AdditionalDetailCell: UICollectionViewCell  {
     view.clipsToBounds = true
     view.textAlignment = .center
     view.textColor = UIColor.steelBlueColor
-    view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 16, weight: .semibold)
-    view.layer.borderWidth = 1
-    view.layer.cornerRadius = 8
+    view.numberOfLines = ViewValues.multiplierTwo
+    view.font = .systemFont(ofSize: ViewValues.normalSize, weight: .semibold)
+    view.layer.borderWidth = ViewValues.borderWidth
+    view.layer.cornerRadius = ViewValues.defaultCornerRadius
     view.layer.borderColor = UIColor.systemGray3.cgColor
     return view
   }()
   
   private lazy var genderStackView: UIStackView = {
     let view = UIStackView(arrangedSubviews: [descriptionLabel, infoLabel])
-    view.spacing = 8
+    view.spacing = ViewValues.normalPadding
     view.axis = .horizontal
     return view
   }()
@@ -69,11 +69,12 @@ class AdditionalDetailCell: UICollectionViewCell  {
     }
     
     NSLayoutConstraint.activate([
-      descriptionLabel.widthAnchor.constraint(equalToConstant: 100),
-      genderStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-      genderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-      genderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-      genderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+      genderStackView.topAnchor.constraint(equalTo: topAnchor),
+      genderStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      genderStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      genderStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      descriptionLabel.widthAnchor.constraint(equalToConstant: ViewValues.defaultDescriptionLabelWidth),
     ])
   }
 }

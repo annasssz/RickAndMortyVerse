@@ -33,8 +33,8 @@ class EpisodeCell: UICollectionViewCell {
     view.textAlignment = .center
     view.text = "Episode"
     view.textColor = UIColor.textColor
-    view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 24, weight: .medium)
+    view.numberOfLines = ViewValues.multiplierTwo
+    view.font = .systemFont(ofSize: ViewValues.doubleSize, weight: .medium)
     return view
   }()
   
@@ -68,31 +68,37 @@ class EpisodeCell: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
-      episodeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-      episodeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-      episodeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+      episodeLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+      episodeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      episodeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       
-      collectionView.topAnchor.constraint(equalTo: episodeLabel.bottomAnchor, constant: 10),
-      collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-      collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-      collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+      collectionView.topAnchor.constraint(equalTo: episodeLabel.bottomAnchor, constant: ViewValues.defaultPadding),
+      collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
     ])
   }
   
   private func createLayout() -> UICollectionViewLayout {
     let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
       
-      let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(150))
+      let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(ViewValues.defaultEpisodeCell), 
+                                            heightDimension: .absolute(ViewValues.defaultEpisodeCell))
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+      item.contentInsets = NSDirectionalEdgeInsets(top: ViewValues.defaultPadding,
+                                                   leading: ViewValues.defaultPadding,
+                                                   bottom: ViewValues.defaultPadding,
+                                                   trailing: ViewValues.defaultPadding)
       
-      let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(150), heightDimension: .absolute(150))
+      let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(ViewValues.defaultEpisodeCell),
+                                             heightDimension: .absolute(ViewValues.defaultEpisodeCell))
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
       
       let section = NSCollectionLayoutSection(group: group)
       section.orthogonalScrollingBehavior = .continuous
       
-      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
+      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(ViewValues.fractionalWidth), 
+                                              heightDimension: .absolute(ViewValues.defaultHeightCell))
       let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
       section.boundarySupplementaryItems = [header]
       

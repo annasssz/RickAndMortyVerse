@@ -75,25 +75,33 @@ class CharacterListViewController: UIViewController {
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(240))
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(ViewValues.fractionalWidth / 2),
+                                          heightDimension: .absolute(ViewValues.heightDimension))
     
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     
-    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(240))
+    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(ViewValues.fractionalWidth),
+                                           heightDimension: .absolute(ViewValues.heightDimension))
     
     let group = NSCollectionLayoutGroup.horizontal(
       layoutSize: groupSize,
       subitems: [item, item]
     )
     
-    group.interItemSpacing = .fixed(16)
+    group.interItemSpacing = .fixed(ViewValues.doublePadding)
     
-    let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44)), elementKind: "footer", alignment: .bottom)
+    let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(ViewValues.fractionalWidth),
+                                                                               heightDimension: .absolute(ViewValues.heightDimension)),
+                                                             elementKind: "footer",
+                                                             alignment: .bottom)
     
     let section = NSCollectionLayoutSection(group: group)
     
-    section.interGroupSpacing = 16
-    section.contentInsets = .init(top: 12, leading: 12, bottom: 12, trailing: 12)
+    section.interGroupSpacing = ViewValues.doublePadding
+    section.contentInsets = .init(top: ViewValues.defaultPadding,
+                                  leading: ViewValues.defaultPadding,
+                                  bottom: ViewValues.defaultPadding,
+                                  trailing: ViewValues.defaultPadding)
     section.boundarySupplementaryItems = [footer]
     
     return UICollectionViewCompositionalLayout(section: section)

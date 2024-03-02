@@ -50,11 +50,11 @@ class CharacterDetailInfoViewController: UIViewController {
     let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
       switch sectionIndex {
       case 0:
-        return createLayoutForCell(withHeight: 330)
+        return createLayoutForCell(withHeight: ViewValues.heightDimension)
       case 1:
-        return createLayoutForCell(withHeight: 30)
+        return createLayoutForCell(withHeight: ViewValues.defaultHeightCell)
       default:
-        return createLayoutForCell(withHeight: CGFloat(self.viewModel.episodes.count * 44))
+        return createLayoutForCell(withHeight: CGFloat(CGFloat(self.viewModel.episodes.count) * ViewValues.defaultHeightCell))
       }
     }
     
@@ -63,16 +63,21 @@ class CharacterDetailInfoViewController: UIViewController {
 }
 
 func createLayoutForCell(withHeight height: CGFloat) -> NSCollectionLayoutSection {
-  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(height))
+  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(ViewValues.fractionalWidth),
+                                        heightDimension: .estimated(height))
   let item = NSCollectionLayoutItem(layoutSize: itemSize)
   
-  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(height))
+  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(ViewValues.fractionalWidth),
+                                         heightDimension: .estimated(height))
   let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-  group.interItemSpacing = .fixed(16)
+  group.interItemSpacing = .fixed(ViewValues.doublePadding)
   
   let section = NSCollectionLayoutSection(group: group)
-  section.interGroupSpacing = 8
-  section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12)
+  section.interGroupSpacing = ViewValues.normalPadding
+  section.contentInsets = NSDirectionalEdgeInsets(top: ViewValues.defaultPadding,
+                                                  leading: ViewValues.defaultPadding,
+                                                  bottom: ViewValues.defaultPadding,
+                                                  trailing: ViewValues.defaultPadding)
   
   return section
 }

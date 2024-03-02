@@ -16,16 +16,16 @@ class EpisodeHeaderView: UICollectionReusableView {
     let view = UILabel()
     view.textAlignment = .left
     view.textColor = UIColor.steelBlueColor
-    view.font = .systemFont(ofSize: 18, weight: .semibold)
+    view.font = .systemFont(ofSize: ViewValues.normalSize, weight: .semibold)
     return view
   }()
   
   private lazy var dotView: UIView = {
     let view = UIView()
-    view.layer.cornerRadius = 5
+    view.layer.cornerRadius = ViewValues.defaultStatusViewCornerRadius
     view.backgroundColor = .steelBlueColor
-    view.widthAnchor.constraint(equalToConstant: 10).isActive = true
-    view.heightAnchor.constraint(equalToConstant: 10).isActive = true
+    view.widthAnchor.constraint(equalToConstant: ViewValues.defaultStatusView).isActive = true
+    view.heightAnchor.constraint(equalToConstant: ViewValues.defaultStatusView).isActive = true
     return view
   }()
   
@@ -33,7 +33,7 @@ class EpisodeHeaderView: UICollectionReusableView {
     let view = UIStackView(arrangedSubviews: [dotView, episodeNameLabel])
     view.axis = .horizontal
     view.alignment = .center
-    view.spacing = 8
+    view.spacing = ViewValues.normalPadding
     return view
   }()
   

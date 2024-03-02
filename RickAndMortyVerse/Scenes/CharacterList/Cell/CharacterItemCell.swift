@@ -24,8 +24,8 @@ class CharacterItemCell: UICollectionViewCell {
     let view = UILabel()
     view.textAlignment = .center
     view.textColor = UIColor.textColor
-    view.numberOfLines = 2
-    view.font = .systemFont(ofSize: 16, weight: .medium)
+    view.numberOfLines = ViewValues.multiplierTwo
+    view.font = .systemFont(ofSize: ViewValues.defaultSize, weight: .medium)
     return view
   }()
   
@@ -33,29 +33,29 @@ class CharacterItemCell: UICollectionViewCell {
     let view = UILabel()
     view.textAlignment = .left
     view.textColor = UIColor.slateGrayColor
-    view.font = .systemFont(ofSize: 14, weight: .semibold)
+    view.font = .systemFont(ofSize: ViewValues.smallSize, weight: .semibold)
     return view
   }()
   
   private lazy var statusView: UIView = {
     let view = UIView()
-    view.layer.cornerRadius = 5
-    view.widthAnchor.constraint(equalToConstant: 10).isActive = true
-    view.heightAnchor.constraint(equalToConstant: 10).isActive = true
+    view.layer.cornerRadius = ViewValues.defaultStatusViewCornerRadius
+    view.widthAnchor.constraint(equalToConstant: ViewValues.defaultStatusView).isActive = true
+    view.heightAnchor.constraint(equalToConstant: ViewValues.defaultStatusView).isActive = true
     return view
   }()
   
   private lazy var stackView: UIStackView = {
     let view = UIStackView(arrangedSubviews: [statusView, statusLabel])
     view.axis = .horizontal
-    view.spacing = 8
+    view.spacing = ViewValues.normalPadding
     return view
   }()
   
   private lazy var imageView: UIImageView = {
     let view = UIImageView()
     view.contentMode = .scaleAspectFill
-    view.layer.cornerRadius = 8
+    view.layer.cornerRadius = ViewValues.normalPadding
     view.clipsToBounds = true
     return view
   }()
@@ -86,25 +86,25 @@ class CharacterItemCell: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
-      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-      imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-      imageView.heightAnchor.constraint(equalToConstant: 150),
+      imageView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: ViewValues.defaultPadding),
+      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewValues.defaultPadding),
+      imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewValues.defaultPadding),
+      imageView.heightAnchor.constraint(equalToConstant: ViewValues.defaultHeightImage),
       
-      nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-      nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-      nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-      nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+      nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: ViewValues.defaultPadding),
+      nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewValues.defaultPadding),
+      nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewValues.defaultPadding),
+      nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -ViewValues.defaultPadding),
       
-      stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-      stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-      stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+      stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewValues.defaultPadding),
+      stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewValues.defaultPadding),
+      stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewValues.defaultPadding),
     ])
   }
   
   private func applyBorder() {
-    layer.borderWidth = 1
-    layer.cornerRadius = 8
+    layer.borderWidth = ViewValues.borderWidth
+    layer.cornerRadius = ViewValues.defaultCornerRadius
     layer.borderColor = UIColor.systemGray3.cgColor
   }
   

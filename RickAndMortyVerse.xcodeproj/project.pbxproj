@@ -42,6 +42,7 @@
 		2BD743622B9314290017EEB4 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743612B9314290017EEB4 /* EpisodeRepository.swift */; };
 		2BD743652B9316160017EEB4 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743642B9316160017EEB4 /* EpisodeResponse.swift */; };
 		2BD743672B9317DA0017EEB4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743662B9317DA0017EEB4 /* Array.swift */; };
+		2BD743712B933F1C0017EEB4 /* ViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD743702B933F1C0017EEB4 /* ViewValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		2BD743612B9314290017EEB4 /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 		2BD743642B9316160017EEB4 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
 		2BD743662B9317DA0017EEB4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		2BD743702B933F1C0017EEB4 /* ViewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBCBDA02B9152D100E2CF1C /* Extension */,
+				2BD7436F2B933E470017EEB4 /* Constants */,
 				2BBCBD9C2B91033500E2CF1C /* Observable */,
 			);
 			path = Utilities;
@@ -386,6 +389,14 @@
 			path = Episode;
 			sourceTree = "<group>";
 		};
+		2BD7436F2B933E470017EEB4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2BD743702B933F1C0017EEB4 /* ViewValues.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,6 +470,7 @@
 			files = (
 				2BD7434C2B9230370017EEB4 /* EpisodeCell.swift in Sources */,
 				2BCBED4F2B8F22510035C91F /* CharacterResponse.swift in Sources */,
+				2BD743712B933F1C0017EEB4 /* ViewValues.swift in Sources */,
 				2BCBED3C2B8F00AE0035C91F /* APIURLBuilder.swift in Sources */,
 				2BCBED182B8EF28A0035C91F /* CharacterListViewController.swift in Sources */,
 				2BCBED3F2B8F01D60035C91F /* Endpoint.swift in Sources */,

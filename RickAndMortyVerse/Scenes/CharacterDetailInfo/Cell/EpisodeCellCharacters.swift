@@ -24,6 +24,7 @@ class EpisodeCellCharacters: UICollectionViewCell {
     let view = UIImageView()
     view.clipsToBounds = true
     view.contentMode = .scaleAspectFill
+    view.layer.cornerRadius = ViewValues.defaultCornerRadius
     return view
   }()
   
@@ -52,10 +53,10 @@ class EpisodeCellCharacters: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-      imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-      imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+      imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
     ])
   }
   
