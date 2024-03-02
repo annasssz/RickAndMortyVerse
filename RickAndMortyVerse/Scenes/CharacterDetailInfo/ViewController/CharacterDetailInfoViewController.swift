@@ -130,8 +130,9 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       }
       episodeCell.configure(viewModel.episodes)
       episodeCell.didselect = { [weak self] id in
-        //        let detailViewController = CharacterDetailInfoViewController()
-        //        self?.navigationController?.pushViewController(detailViewController, animated: true)
+        guard let self else { return }
+        let detailViewController = CharacterDetailInfoViewController(item: self.viewModel.characterItem)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
       }
       return episodeCell
     }

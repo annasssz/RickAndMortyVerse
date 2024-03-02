@@ -38,8 +38,17 @@ class CharacterDetailInfoViewModel: CharacterDetailInfoViewModelType {
     dataState.onNext(.loading)
     do {
       let repository = EpisodeRepository()
-      let response = try await repository.getEpisodes(ids: characterItem.episode.getIds())
-      map(data: response)
+
+      if characterItem.episode.count == 1, let episode = characterItem.episode.first {
+        let response = try await repository.getEpisode(id: episode)
+
+        if let response {
+          map(data: [response])
+        }
+      } else {
+        let response = try await repository.getEpisodes(ids: characterItem.episode.getIds())
+        map(data: response ?? [])
+      }
     } catch {
       dataState.onNext(.error)
     }

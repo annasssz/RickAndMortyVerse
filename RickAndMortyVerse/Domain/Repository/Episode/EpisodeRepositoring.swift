@@ -8,5 +8,6 @@
 import Foundation
 
 protocol EpisodeRepositoring {
-  func getEpisodes(ids: [Int]?) async throws -> [EpisodeResponse]
+  func getEpisodes(ids: [Int]?) async throws -> [EpisodeResponse]?
+  func getEpisode(id: String) async throws -> EpisodeResponse?
 }

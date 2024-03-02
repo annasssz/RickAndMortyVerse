@@ -14,14 +14,23 @@ class EpisodeRepository: EpisodeRepositoring {
     self.service = service
   }
   
-  func getEpisodes(ids: [Int]?) async throws -> [EpisodeResponse] {
+  func getEpisodes(ids: [Int]?) async throws -> [EpisodeResponse]? {
     let idString = ids?.map(String.init).joined(separator: ",") ?? ""
-    let endpoint = makeEndpoint(for: idString)
-    
+
+    let endpoint = Endpoint(path: makeEndpoint(for: idString))
     return try await service.request(endpoint: endpoint)
   }
-  
-  private func makeEndpoint(for ids: String) -> Endpoint {
-    return Endpoint(path: "episode/\(ids)")
+
+  func getEpisode(id: String) async throws -> EpisodeResponse? {
+    guard let lastPathComponent = URL(string: id)?.lastPathComponent else {
+      throw NetworkError.invalidURL
+    }
+
+    let endpoint = Endpoint(path: makeEndpoint(for: lastPathComponent))
+    return try await service.request(endpoint: endpoint)
+  }
+
+  private func makeEndpoint(for ids: String) -> String {
+    return "episode/\(ids)"
   }
 }

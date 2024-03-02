@@ -7,64 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81"
+            uuid = "3A175DA8-592F-4F07-A8DE-93C799484828"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
+            filePath = "RickAndMortyVerse/Scenes/CharacterDetailInfo/Cell/EpisodeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "loadMore(index:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "setupUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 8c0d8b2cf9c2cba1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "RickAndMortyVerse"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "816">
-               </Location>
-               <Location
-                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 862bc577b9850fbc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "RickAndMortyVerse"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "34">
-               </Location>
-               <Location
-                  uuid = "7CAAA374-43E8-4B9C-91E0-A4ED9D49ED81 - 32bc6e6ea6666793"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RickAndMortyVerse.CharacterListViewModel.loadMore(index: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "RickAndMortyVerse"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anamepisashvili/Desktop/RickAndMortyVerse/RickAndMortyVerse/Scenes/CharacterList/ViewModel/CharacterListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "78">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32B45AEB-3347-4D14-86EB-8976282C38DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyVerse/Scenes/CharacterDetailInfo/Cell/EpisodeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
