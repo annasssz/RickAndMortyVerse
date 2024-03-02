@@ -18,4 +18,17 @@ class CharacterRepository: CharacterRepositoring {
     let endpoint = Endpoint(path: "character", queryItems: page.map { [URLQueryItem(name: "page", value: String($0))] })
     return try await service.request(endpoint: endpoint)
   }
+  
+  func getCharacter(id: Int) async throws -> CharacterItem {
+    guard let lastPathComponent = URL(string: "\(id)")?.lastPathComponent else {
+      throw NetworkError.invalidURL
+    }
+
+    let endpoint = Endpoint(path: makeEndpoint(for: lastPathComponent))
+    return try await service.request(endpoint: endpoint)
+  }
+  
+  private func makeEndpoint(for id: String) -> String {
+    return "character/\(id)"
+  }
 }

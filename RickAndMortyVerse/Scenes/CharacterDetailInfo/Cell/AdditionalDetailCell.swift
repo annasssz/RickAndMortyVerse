@@ -49,7 +49,7 @@ class AdditionalDetailCell: UICollectionViewCell  {
     setupUI()
   }
   
-  func configure(description: String, text: String) {
+  func configure(description: String, text: String?) {
     descriptionLabel.text = description
     infoLabel.text = text
   }

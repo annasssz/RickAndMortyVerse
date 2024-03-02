@@ -60,7 +60,9 @@ class ItemInfoCell: UICollectionViewCell  {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configure(with item: CharacterItem) {
+  func configure(with item: CharacterItem?) {
+    guard let item else { return }
+    
     if let url = URL(string: item.image) {
       imageView.load(url: url) { [weak self] loadedImage in
         self?.imageView.image = loadedImage

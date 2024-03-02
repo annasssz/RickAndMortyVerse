@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharacterRepositoring {
   func getCharacters(page: Int?) async throws -> CharacterResponse
+  func getCharacter(id: Int) async throws -> CharacterItem
 }

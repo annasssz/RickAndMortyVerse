@@ -15,8 +15,8 @@ class CharacterDetailInfoViewController: UIViewController {
     collectionViewLayout: createLayout()
   )
   
-  init(item: CharacterItem) {
-    viewModel = .init(characterItem: item)
+  init(id: Int) {
+    viewModel = .init(id: id)
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -27,8 +27,23 @@ class CharacterDetailInfoViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.viewDidLoad()
+    setupBindings()
     largeTitleDisplayMode()
     setupColectionView()
+  }
+  
+  private func setupBindings() {
+    viewModel.dataState
+      .bind { [weak self] state in
+        switch state {
+        case .error:
+          print("error")
+        case .loaded:
+          self?.collectionView.reloadData()
+        default:
+          break
+        }
+      }
   }
   
   private func largeTitleDisplayMode() {
@@ -114,11 +129,11 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       
       switch indexPath.row {
       case 0:
-        detailCell.configure(description: "GENDER:", text: viewModel.characterItem.gender)
+        detailCell.configure(description: "GENDER:", text: viewModel.characterItem?.gender)
       case 1:
-        detailCell.configure(description: "SPECIES:", text: viewModel.characterItem.species)
+        detailCell.configure(description: "SPECIES:", text: viewModel.characterItem?.species)
       case 2:
-        detailCell.configure(description: "STATUS:", text: viewModel.characterItem.status.rawValue)
+        detailCell.configure(description: "STATUS:", text: viewModel.characterItem?.status.rawValue)
       default:
         break
       }
@@ -131,7 +146,7 @@ extension CharacterDetailInfoViewController: UICollectionViewDataSource {
       episodeCell.configure(viewModel.episodes)
       episodeCell.didselect = { [weak self] id in
         guard let self else { return }
-        let detailViewController = CharacterDetailInfoViewController(item: self.viewModel.characterItem)
+        let detailViewController = CharacterDetailInfoViewController(id: id)
         self.navigationController?.pushViewController(detailViewController, animated: true)
       }
       return episodeCell

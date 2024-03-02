@@ -139,7 +139,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let item = viewModel.filteredData[indexPath.row]
     
-    let detailViewController = CharacterDetailInfoViewController(item: item)
+    let detailViewController = CharacterDetailInfoViewController(id: item.id)
     self.navigationController?.pushViewController(detailViewController, animated: true)
   }
 }
