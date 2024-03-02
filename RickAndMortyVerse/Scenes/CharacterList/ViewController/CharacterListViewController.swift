@@ -33,14 +33,14 @@ class CharacterListViewController: UIViewController {
     setupSearchBar()
   }
   
-  func setupSearchBar() {
+  private func setupSearchBar() {
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = false
     navigationItem.title = "Characters"
     navigationController?.navigationBar.prefersLargeTitles = true
   }
   
-  func setupColectionView() {
+  private func setupColectionView() {
     view.addSubview(collectionView)
     
     collectionView.register(CharacterItemCell.self, forCellWithReuseIdentifier: CharacterItemCell.identifier)
@@ -51,7 +51,7 @@ class CharacterListViewController: UIViewController {
     collectionView.delegate = self
   }
   
-  func setupBindings() {
+  private func setupBindings() {
     viewModel.dataState
       .bind { [weak self] state in
         switch state {
@@ -76,7 +76,7 @@ class CharacterListViewController: UIViewController {
   
   func createLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(240))
-
+    
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(240))
@@ -133,7 +133,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
     self.navigationController?.pushViewController(detailViewController, animated: true)
   }
 }
-                                        
+
 extension CharacterListViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     guard let searchText = searchController.searchBar.text else { return }

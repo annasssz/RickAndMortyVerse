@@ -11,6 +11,6 @@ enum NetworkError: Error {
   case invalidURL
   case requestFailed(Error)
   case decodingError(Error)
-  case other(String) // For custom error messages
+  case other(String)
 }
 

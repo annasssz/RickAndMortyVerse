@@ -12,35 +12,35 @@ class AdditionalDetailCell: UICollectionViewCell  {
   
   private lazy var descriptionLabel: UILabel = {
     let view = UILabel()
-    view.textAlignment = .center
-    view.layer.borderWidth = 1
-    view.layer.borderColor = UIColor.systemGray3.cgColor
-    view.layer.cornerRadius = 8
-    view.clipsToBounds = true
-    view.textColor = UIColor.slateGrayColor
     view.backgroundColor = .systemGray6
+    view.clipsToBounds = true
+    view.textAlignment = .center
+    view.textColor = UIColor.slateGrayColor
     view.font = .systemFont(ofSize: 16, weight: .semibold)
+    view.layer.borderWidth = 1
+    view.layer.cornerRadius = 8
+    view.layer.borderColor = UIColor.systemGray3.cgColor
     return view
   }()
   
   private lazy var infoLabel: UILabel = {
     let view = UILabel()
-    view.textAlignment = .center
-    view.textColor = UIColor.steelBlueColor
     view.backgroundColor = .systemGray6
     view.clipsToBounds = true
-    view.layer.borderWidth = 1
-    view.layer.borderColor = UIColor.systemGray3.cgColor
-    view.layer.cornerRadius = 8
+    view.textAlignment = .center
+    view.textColor = UIColor.steelBlueColor
     view.numberOfLines = 2
     view.font = .systemFont(ofSize: 16, weight: .semibold)
+    view.layer.borderWidth = 1
+    view.layer.cornerRadius = 8
+    view.layer.borderColor = UIColor.systemGray3.cgColor
     return view
   }()
   
   private lazy var genderStackView: UIStackView = {
     let view = UIStackView(arrangedSubviews: [descriptionLabel, infoLabel])
-    view.axis = .horizontal
     view.spacing = 8
+    view.axis = .horizontal
     return view
   }()
   

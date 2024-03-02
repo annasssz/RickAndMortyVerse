@@ -40,7 +40,6 @@ class CharacterItemCell: UICollectionViewCell {
   private lazy var statusView: UIView = {
     let view = UIView()
     view.layer.cornerRadius = 5
-    view.translatesAutoresizingMaskIntoConstraints = false
     view.widthAnchor.constraint(equalToConstant: 10).isActive = true
     view.heightAnchor.constraint(equalToConstant: 10).isActive = true
     return view
@@ -73,7 +72,7 @@ class CharacterItemCell: UICollectionViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    imageView.image = .init(named: "")
+    imageView.image = nil
   }
   
   required init?(coder: NSCoder) {
@@ -105,8 +104,8 @@ class CharacterItemCell: UICollectionViewCell {
   
   private func applyBorder() {
     layer.borderWidth = 1
-    layer.borderColor = UIColor.systemGray3.cgColor
     layer.cornerRadius = 8
+    layer.borderColor = UIColor.systemGray3.cgColor
   }
   
   func configure(character: CharacterItem) {

@@ -79,7 +79,7 @@ class EpisodeCell: UICollectionViewCell {
     ])
   }
   
-  func createLayout() -> UICollectionViewLayout {
+  private func createLayout() -> UICollectionViewLayout {
     let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
       
       let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(150))
@@ -100,10 +100,9 @@ class EpisodeCell: UICollectionViewCell {
     }
     return layout
   }
-  
 }
 
-extension EpisodeCell: UICollectionViewDataSource{
+extension EpisodeCell: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     episodes.count
   }

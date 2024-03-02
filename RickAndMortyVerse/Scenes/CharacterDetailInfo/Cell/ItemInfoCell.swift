@@ -78,8 +78,8 @@ class ItemInfoCell: UICollectionViewCell  {
 
   private func applyBorder() {
     layer.borderWidth = 1
-    layer.borderColor = UIColor.systemGray3.cgColor
     layer.cornerRadius = 8
+    layer.borderColor = UIColor.systemGray3.cgColor
   }
   
   private func setupUI() {

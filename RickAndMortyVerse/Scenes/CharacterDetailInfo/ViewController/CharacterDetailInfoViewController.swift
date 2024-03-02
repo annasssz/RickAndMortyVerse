@@ -31,11 +31,11 @@ class CharacterDetailInfoViewController: UIViewController {
     setupColectionView()
   }
   
-  func largeTitleDisplayMode() {
+  private func largeTitleDisplayMode() {
     self.navigationItem.largeTitleDisplayMode = .never
   }
   
-  func setupColectionView() {
+  private func setupColectionView() {
     view.addSubview(collectionView)
     
     collectionView.register(ItemInfoCell.self, forCellWithReuseIdentifier: ItemInfoCell.identifier)
