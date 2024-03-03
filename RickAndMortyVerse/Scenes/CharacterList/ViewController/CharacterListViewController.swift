@@ -93,7 +93,7 @@ class CharacterListViewController: UIViewController {
     group.interItemSpacing = .fixed(ViewValues.doublePadding)
     
     let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(ViewValues.fractionalWidth),
-                                                                               heightDimension: .absolute(ViewValues.heightDimension)),
+                                                                               heightDimension: .absolute(ViewValues.defaultHeightCell)),
                                                              elementKind: "footer",
                                                              alignment: .bottom)
     
