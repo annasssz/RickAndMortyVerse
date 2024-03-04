@@ -11,13 +11,6 @@
 
 - **Real-Time Data Utilization**: Stay up-to-date with the latest character data fetched from the Rick and Morty API, ensuring the most current information is available at your fingertips.
 
-### Installation:
-1. **Clone or Download the Repository**: Obtain the app's source code from the designated repository.
-   
-2. **Open in Xcode**: Launch Xcode and import the project, ready for customization and deployment.
-   
-3. **Build and Run**: Build and run the app on your iOS device or simulator effortlessly, immersing yourself in the captivating world of Rick and Morty characters.
-
 ### Usage:
 1. **Launch the App**: Open the app on your iOS device, initiating your journey into the vibrant Rick and Morty universe.
    
